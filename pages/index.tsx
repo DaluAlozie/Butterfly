@@ -93,7 +93,7 @@ const Home: NextPage = () => {
                 </a>
               </Link>           
             </div>
-        </div>
+          </div>
         </nav>
         <div>
           <button className='fixed justify-center hidden w-32 py-2 mb-0 text-white md:inline-flex right-5 bottom-5 h-11 bg-home rounded-3xl'>
