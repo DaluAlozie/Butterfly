@@ -1,26 +1,36 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.link-underline {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .3s ease-in-out;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.link-underline-black {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#F2C, #F2C)
 }
 
-* {
-  box-sizing: border-box;
+.link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
+.logo-text{
+    font-family: 'logo-font';
     color: white;
-    background: black;
-  }
+    font-size: 25px;
+}
+
+.bg-custom-grad{
+    background-image: radial-gradient(circle at 1000px 50px,#6FBCFF, #FFBBF4 30%, #6FBCFF)
+}
+
+
+@font-face {
+    font-family: 'logo-font';
+    src: url('../web_assets/web_assets/ergonomique-bold.ttf');
 }
