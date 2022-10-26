@@ -4,7 +4,6 @@ const Blog: NextPage = () => {
   return (
   <div className='w-full h-full'>
     Blog
-
   </div>
   )
 }
