@@ -3,23 +3,24 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../../web_assets/web_assets/whitelogo.svg'
 import linkedinIcon from '../../web_assets/web_assets/linkedin-icon.png'
-import {useState, useEffect} from 'react'  
+import {useState, useEffect, useRef} from 'react'  
 
 
 const NavLink = "items-center justify-center min-w-max mx-4 link-underline text-white mt-2 font-sans text-3xl"
 const Nav: NextPage = () => {
-  let scrollY: number;
 
+  const [scrollY,setScrollY] = useState(0)
   useEffect(()=>{
     
     //Scroll event listener to show and hide navbar
-    scrollY = window.scrollY;
+    setScrollY(window.scrollY);
     if (typeof window != undefined) {
       window.addEventListener("scroll",()=>{
         let currentScroll: number = window.scrollY; 
         let diff: number = currentScroll - scrollY;
         const nav = document.getElementById("nav");
-
+        console.log(scrollY);
+        
         if (diff < 0){
           nav?.classList.remove("scroll-hide");
           nav?.classList.add("scroll-show");
@@ -29,7 +30,7 @@ const Nav: NextPage = () => {
           nav?.classList.remove("scroll-show");
           nav?.classList.add("scroll-hide");
         }
-        scrollY = window.scrollY;
+        setScrollY(window.scrollY);
       })
     }
   },[])
@@ -104,7 +105,7 @@ const Nav: NextPage = () => {
                       Contact
                   </a>
               </Link>  
-              <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-4" target="_blank">
+              <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-4" target="_blank" rel="noopener">
                 <Image src={linkedinIcon}
                   height={40}
                   width={40}

@@ -7,7 +7,7 @@ import Footer from '../components/layout/footer';
 function MyApp({ Component, pageProps, router }: AppProps) {
   
   return(
-    <div className='h-screen'>
+    <div className='h-screen bg-sky-50'>
       {
         (
           router.route !== "/") && (
