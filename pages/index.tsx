@@ -30,7 +30,7 @@ const Home: NextPage = () => {
                 </a>
               </div>
               <div className='hidden lg:flex '>
-                <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-5" target="_blank" rel="noopener">
+                <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-5" target="_blank" rel="noopener noreferrer">
                   <Image src={linkedinIcon}
                     height={50}
                     width={50}

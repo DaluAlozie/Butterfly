@@ -33,7 +33,7 @@ const Nav: NextPage = () => {
         setScrollY(window.scrollY);
       })
     }
-  },[])
+  })
 
 
   const collapse =() => {
@@ -105,7 +105,7 @@ const Nav: NextPage = () => {
                       Contact
                   </a>
               </Link>  
-              <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-4" target="_blank" rel="noopener">
+              <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-4" target="_blank" rel="noopener noreferrer">
                 <Image src={linkedinIcon}
                   height={40}
                   width={40}
