@@ -3,27 +3,70 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../../web_assets/web_assets/whitelogo.svg'
 import linkedinIcon from '../../web_assets/web_assets/linkedin-icon.png'
+import {useState, useEffect} from 'react'  
 
 
-const NavLink = "items-center justify-center min-w-max mx-4 link-underline text-white mt-2 font-sans text-xl"
+const NavLink = "items-center justify-center min-w-max mx-4 link-underline text-white mt-2 font-sans text-3xl"
 const Nav: NextPage = () => {
+  let scrollY: number;
+
+  useEffect(()=>{
+    
+    //Scroll event listener to show and hide navbar
+    scrollY = window.scrollY;
+    if (typeof window != undefined) {
+      window.addEventListener("scroll",()=>{
+        let currentScroll: number = window.scrollY; 
+        let diff: number = currentScroll - scrollY;
+        const nav = document.getElementById("nav");
+
+        if (diff < 0){
+          nav?.classList.remove("scroll-hide");
+          nav?.classList.add("scroll-show");
+        } 
+        
+        else if(diff > 0){
+          nav?.classList.remove("scroll-show");
+          nav?.classList.add("scroll-hide");
+        }
+        scrollY = window.scrollY;
+      })
+    }
+  },[])
+
+
+  const collapse =() => {
+    const nav = document.getElementById("nav");
+
+    //Removing scroll events as it interferes with collapse
+    nav?.classList.remove("scroll-show");
+    nav?.classList.remove("scroll-hode");
+
+    nav!.classList.toggle("collapse-hide");
+    nav!.classList.toggle("collapse-show");
+    
+    document.getElementById("navbar")!.classList.toggle("hidden");
+
+  }
   return (
-    <nav className='flex flex-wrap items-start py-4 pt-5 justify-center px-5 '>
+    <nav id="nav" className='sticky top-0 flex flex-wrap items-start justify-center px-5 py-4 pt-5 bg-fixed bg-custom-nav collapse-hide'>
+      
         <Link href='/'>
-        <a className='inline-flex items-center p-2 mr-4 '>
+        <a className='inline-flex items-center p-2 mr-10 '>
           <Image src={logo}
-              height={40}
-              width={40}
+              height={50}
+              width={50}
               alt="Logo"
               >
           </Image>
-          <div className='logo-text ml-3 '>
-            butterfly.
+          <div className='ml-3 logo-text'>
+            butterfly
           </div>
+          <span className='mb-6 text-6xl text-white'>.</span>
         </a>
         </Link>
-        <button onClick={()=>{document.getElementById("navbar")!.classList.toggle("hidden")}} 
-        className='inline-flex p-3 ml-auto text-white rounded outline-none hover:bg-sky-600 lg:hidden hover:text-white mr-3'>
+        <button onClick={collapse} 
+        className='fixed right-0 inline-flex p-3 ml-10 mr-3 text-white rounded outline-none top-8 lg:hidden hover:text-white'>
         <svg
             className='w-6 h-6'
             fill='none'
@@ -39,8 +82,8 @@ const Nav: NextPage = () => {
             />
         </svg>
         </button>
-        <div id="navbar" className='justify-end hidden w-full lg:inline-flex lg:flex-grow lg:w-auto h-fit'>
-          <div className='flex flex-col items-center lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto mr-12'>
+        <div id="navbar" className='justify-end hidden w-full lg:inline-flex lg:flex-grow lg:w-auto'>
+          <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
               <Link href='/'>
               <a className={NavLink}>
                   Home
@@ -61,16 +104,14 @@ const Nav: NextPage = () => {
                       Contact
                   </a>
               </Link>  
-              <Link href='/'>
-                  <a className="mt-4 link-underline">
-                  <Image src={linkedinIcon}
-                    height={25}
-                    width={25}
-                    alt="Logo"
-                    >
-                </Image>  
-                  </a>
-              </Link>             
+              <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-4" target="_blank">
+                <Image src={linkedinIcon}
+                  height={40}
+                  width={40}
+                  alt="Logo"
+                  >
+              </Image>  
+            </a>
                   
           </div>
       </div>

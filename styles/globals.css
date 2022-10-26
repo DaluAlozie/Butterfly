@@ -1,7 +1,10 @@
+/* Importing tailwind styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* Nav link styles */
 .link-underline {
     background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
     background-size: 0 3px;
@@ -16,21 +19,72 @@
 
 .link-underline:hover {
     background-size: 100% 3px;
-    background-position: 0 100%
+    background-position: 0 100%;
 }
 
+/*Butterfly text in header */
 .logo-text{
     font-family: 'logo-font';
     color: white;
-    font-size: 25px;
+    font-size: 40px;
 }
 
-.bg-custom-grad{
-    background-image: radial-gradient(circle at 1000px 50px,#6FBCFF, #FFBBF4 30%, #6FBCFF)
+/* Nav Background */
+.bg-custom-nav{
+    background-image: radial-gradient(circle at 40% 50%,#6FBCFF 40%, #6FBCFF 10%,#FFBBF4 70%, #FFBBF4 10%,#6FBCFF);
+    background-attachment: fixed;
+
+}
+
+/* Footer background */
+.bg-custom-footer{
+    background-image: linear-gradient(#6FBCFF 50%,#FFBBF4 90%);
+    background-attachment: fixed;
+}
+
+/* Custom collapse */
+#nav.collapse-hide{
+    max-height: 120px;
+}
+#nav.collapse-show{
+    max-height: 350px;
+    transition: max-height 0.25s ease-in-out;
+    overflow: visible;
+}
+
+/* hide nav on scroll */
+#nav.scroll-hide{
+    transform: scaleY(0);    
+    transform-origin: top;
+    transition: transform 0.2s ease;
+
+}
+#nav.scroll-show{
+    transform: scaleY(1);    
+    transform-origin: top;
+    transition: transform 0.2s ease;
+}
+
+/* Home page */
+.home-message{
+    font-family: 'home-message-font';
+    color: white;
+    font-size: 60px;
+    
+}
+
+.bg-home{
+    background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
 }
 
 
+/* Font for butterfly in header */
 @font-face {
     font-family: 'logo-font';
     src: url('../web_assets/web_assets/ergonomique-bold.ttf');
 }
+@font-face {
+    font-family: 'home-message-font';
+    src: url('../web_assets/web_assets/ye-paradigma-italic-light.otf');
+}
+

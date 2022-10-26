@@ -5,13 +5,24 @@ import Header from '../components/layout/header';
 import Footer from '../components/layout/footer';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
+  
   return(
     <div className='h-screen'>
-      <Header/>
+      {
+        (
+          router.route !== "/") && (
+          <Header />
+        )
+      }
       <Main>
       <Component {...pageProps} />
       </Main>
-      <Footer/>
+      {
+        (
+          router.route !== "/") && (
+          <Footer/>
+        )
+      }
     </div>
 
 

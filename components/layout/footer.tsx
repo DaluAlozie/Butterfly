@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 
 const Footer: NextPage = () => {
   return(
-    <footer className='bottom-0 w-full bg-custom-grad h-3/5 min-h-max'>
+    <footer className='bottom-0 w-full bg-custom-footer h-3/5 min-h-max'>
 
         <div className="p-4 text-center text-white">
             © 2021 Copyright:
