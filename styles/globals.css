@@ -14,7 +14,7 @@
 }
 
 .link-underline-black {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(#F2C, #F2C)
+    background-image: linear-gradient(transparent, transparent), linear-gradient(black, black)
 }
 
 .link-underline:hover {
@@ -47,7 +47,7 @@
     max-height: 120px;
 }
 #nav.collapse-show{
-    max-height: 350px;
+    max-height: 360px;
     transition: max-height 0.25s ease-in-out;
     overflow: visible;
 }

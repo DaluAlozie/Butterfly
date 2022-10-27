@@ -5,13 +5,13 @@ import logo from '../web_assets/web_assets/whitelogo.svg'
 import Link from 'next/link'
 
 
-const NavLink = "items-center justify-center min-w-max mx-4 link-underline text-black mt-2 font-sans text-4xl"
+const NavLink = "items-center justify-center min-w-max mx-4 link-underline link-underline-black text-black mt-2 font-sans text-4xl"
 
 const Home: NextPage = () => {
   return (
-    <div className='flex flex-row w-screen min-h-screen min-w-screen'>
+    <div className='flex flex-row flex-wrap-reverse w-screen min-h-screen min-w-screen bg-green'>
       {/* Left side */}
-      <div className='w-1/2 p-5 bg-home min-w-max'>
+      <div className='flex-col w-full min-h-full p-5 bg-home xl:flex xl:w-1/2'>
         <nav className='flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 min-w-fit'>
           <div className='flex-wrap justify-between w-full ml-5 lg:inline-flex lg:flex-grow lg:w-auto'>
             <div className='flex flex-row flex-wrap justify-between w-full mr-12 '> 
@@ -42,14 +42,15 @@ const Home: NextPage = () => {
             </div>
           </div>
         </nav>
-
-        <div className='mt-24 ml-5 home-message'><i>“ Spread your </i></div>
-        <div className='ml-5 home-message'> <i>social wings ”</i></div>
-
+        {/* main content */}
+        <div className='min-h-screen min-w-screen bg-inherit'>
+          <div className='mt-24 ml-5 home-message'><i>“ Spread your </i></div>
+          <div className='ml-5 home-message'> <i>social wings ”</i></div>
+        </div>
       </div>
 
       {/* Right side */}
-      <div className='w-1/2 p-5 bg-sky-50 min-w-max'>
+      <div className='w-full p-5 min-h-max bg-sky-50 xl:flex xl:w-1/2'>
         <nav className='flex flex-wrap items-start justify-center px-5 py-4 pt-5 bg-fixed collapse-hide'>
           <button 
       
@@ -95,10 +96,14 @@ const Home: NextPage = () => {
             </div>
           </div>
         </nav>
-        <div>
-          <button className='fixed justify-center hidden w-32 py-2 mb-0 text-white md:inline-flex right-5 bottom-5 h-11 bg-home rounded-3xl'>
-            <b>Join Today</b>
-          </button>
+
+        {/* main content */}
+        <div className='min-h-screen min-w-screen bg-inherit'>
+          <div> 
+            <button className='fixed justify-center hidden w-32 py-2 mb-0 text-white md:inline-flex right-5 bottom-5 h-11 bg-home rounded-3xl'>
+              <b>Join Today</b>
+            </button>
+          </div>
         </div>
       </div>
     </div>
