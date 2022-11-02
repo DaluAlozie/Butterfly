@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import linkedinIcon from '../../web_assets/web_assets/linkedin-icon.png'
-import insta from '../../web_assets/web_assets/insta-logo.svg'
+import insta from '../../web_assets/web_assets/Insta-logo.svg'
 
 const Footer: NextPage = () => {
   return(
