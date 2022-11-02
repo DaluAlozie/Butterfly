@@ -35,5 +35,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/web_assets/__MACOSX/web_assets
 .vercel
