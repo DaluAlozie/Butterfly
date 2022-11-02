@@ -7,7 +7,7 @@ import {useState, useEffect, useRef} from 'react'
 let scrollY: number;
 
 
-const NavLink = "items-center justify-center min-w-max mx-4 link-underline text-white mt-2 font-sans text-3xl"
+const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white font-sans text-3xl"
 const Nav: NextPage = () => {
 
 
@@ -54,10 +54,11 @@ const Nav: NextPage = () => {
 
   }
   return (
-    <nav id="nav" className='sticky top-0 flex flex-wrap items-start justify-center px-5 py-4 pt-5 bg-fixed bg-custom-nav collapse-hide'>
+    <nav id="nav" className='sticky top-0 flex flex-wrap items-center justify-center px-5 bg-fixed bg-custom-nav collapse-hide min-h-36'>
       
         <Link href='/'>
-        <a className='inline-flex items-center p-2 mr-10 '>
+        {/* This height deterines height of nav */}
+        <a className='inline-flex items-center h-32 px-2 py-2 mr-10'>
           <Image src={logo}
               height={50}
               width={50}
@@ -87,37 +88,36 @@ const Nav: NextPage = () => {
             />
         </svg>
         </button>
-        <div id="navbar" className='justify-end hidden w-full lg:inline-flex lg:flex-grow lg:w-auto'>
+        <div id="navbar" className='items-center justify-end hidden w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
           <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
-              <Link href='/'>
-              <a className={NavLink}>
-                  Home
-              </a>
-              </Link>
-              <Link href='/blog'>
-                  <a className={NavLink}>
-                    Blog
-                  </a>
-              </Link>
-              <Link href='/about'>
-                  <a className={NavLink}>
-                    About
-                  </a>
-              </Link>
-              <Link href='/contact'>
-                  <a className={NavLink}>
-                      Contact
-                  </a>
-              </Link>  
-              <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-4" target="_blank" rel="noopener noreferrer">
-                <Image src={linkedinIcon}
-                  height={40}
-                  width={40}
-                  alt="Logo"
-                  >
-              </Image>  
+            <Link href='/'>
+            <a className={NavLink}>
+                Home
             </a>
-                  
+            </Link>
+            <Link href='/blog'>
+                <a className={NavLink}>
+                  Blog
+                </a>
+            </Link>
+            <Link href='/about'>
+                <a className={NavLink}>
+                  About
+                </a>
+            </Link>
+            <Link href='/contact'>
+                <a className={NavLink}>
+                    Contact
+                </a>
+            </Link>  
+            <a href="https://www.linkedin.com/company/butterflytechnologies/" target="_blank" rel="noopener noreferrer">
+              <Image src={linkedinIcon}
+                height={40}
+                width={40}
+                alt="Logo"
+                >
+            </Image>  
+            </a> 
           </div>
       </div>
     </nav>

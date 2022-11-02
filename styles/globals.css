@@ -3,7 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+    background:rgb(240 249 255);
+    width: 100vw;
+    height: 100vh;
+}
 /* Nav link styles */
 .link-underline {
     background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
@@ -44,10 +48,13 @@
 
 /* Custom collapse */
 #nav.collapse-hide{
+    height: max-content;
     max-height: 120px;
 }
 #nav.collapse-show{
-    max-height: 360px;
+    height: max-content;
+
+    max-height: 390px;
     transition: max-height 0.25s ease-in-out;
     overflow: visible;
 }
@@ -69,8 +76,11 @@
 .home-message{
     font-family: 'home-message-font';
     color: white;
-    font-size: 60px;
-    
+    font-size: 60px;    
+}
+
+.join-button{
+    right: calc(50% - 60px);
 }
 
 .bg-home{
@@ -88,3 +98,8 @@
     src: url('../web_assets/web_assets/ye-paradigma-italic-light.otf');
 }
 
+/* About page */
+
+.bg-about{
+    background: linear-gradient(140deg, rgb(240 249 255) 70%,#6FBCFF 10% 20%,#FFBBF4 );
+}

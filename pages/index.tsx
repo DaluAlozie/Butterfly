@@ -5,11 +5,11 @@ import logo from '../web_assets/web_assets/whitelogo.svg'
 import Link from 'next/link'
 
 
-const NavLink = "items-center justify-center min-w-max mx-4 link-underline link-underline-black text-black mt-2 font-sans text-4xl"
+const NavLink = "h-14 items-center justify-center min-w-max mx-4 link-underline link-underline-black text-black mt-2 font-sans text-4xl"
 
 const Home: NextPage = () => {
   return (
-    <div className='flex flex-row flex-wrap-reverse w-screen min-h-screen min-w-screen bg-green'>
+    <div className='flex flex-row flex-wrap-reverse w-full min-w-full min-h-screen bg-green'>
       {/* Left side */}
       <div className='flex-col w-full min-h-full p-5 bg-home xl:flex xl:w-1/2'>
         <nav className='flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 min-w-fit'>
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
         </nav>
         {/* main content */}
         <div className='min-h-screen min-w-screen bg-inherit'>
-          <div className='mt-24 ml-5 home-message'><i>“ Spread your </i></div>
+          <div className='mt-24 ml-5 italic home-message'><i>“ Spread your </i></div>
           <div className='ml-5 home-message'> <i>social wings ”</i></div>
         </div>
       </div>
@@ -100,9 +100,9 @@ const Home: NextPage = () => {
         {/* main content */}
         <div className='min-h-screen min-w-screen bg-inherit'>
           <div> 
-            <button className='fixed justify-center hidden w-32 py-2 mb-0 text-white md:inline-flex right-5 bottom-5 h-11 bg-home rounded-3xl'>
-              <b>Join Today</b>
-            </button>
+              <a type='button' className='absolute justify-center w-32 py-2 mb-0 text-center text-white join-button md:bottom-5 md:fixed md:inline-flex md:right-5 h-11 bg-home rounded-3xl' href="https://apps.apple.com/gb/app/butterfly/id1640868808">
+                <b>Join Today</b>
+              </a>
           </div>
         </div>
       </div>
