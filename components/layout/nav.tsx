@@ -19,19 +19,21 @@ const Nav: NextPage = () => {
   })
 
   const addScrollListner = () => {
+    const nav = document.getElementById("nav");
+
     scrollY = window.scrollY;
+    const navHeight: number = nav!.clientHeight/2;
 
     window.addEventListener("scroll",()=>{
       let currentScroll: number = window.scrollY; 
       let diff: number = currentScroll - scrollY;
-      const nav = document.getElementById("nav");
 
       if (diff < 0){
         nav?.classList.remove("scroll-hide");
         nav?.classList.add("scroll-show");
       } 
       
-      else if(diff > 0){
+      else if(diff > 0 && currentScroll > navHeight){
         nav?.classList.remove("scroll-show");
         nav?.classList.add("scroll-hide");
       }
