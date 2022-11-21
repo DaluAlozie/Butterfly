@@ -13,7 +13,7 @@ const Post: NextPage<Props> = ({props}) => {
 
 
   return (
-    <div className='bg-blue-300 rounded-md m-10 p-7 min-w-max w-7/12 font-sans text-gray-100'>
+    <div className='w-7/12 m-10 font-sans text-gray-100 bg-blue-300 rounded-md p-7 min-w-max'>
         <div className='mt-2'>
             {title}
         </div>
@@ -21,9 +21,9 @@ const Post: NextPage<Props> = ({props}) => {
             {content}
         </div>
         
-        <div className='text-12 text-gray-500 mt-5 justify-self-end w-full flex flex-row justify-between'>
+        <div className='flex flex-row justify-between w-full mt-5 text-gray-500 text-12 justify-self-end'>
             <span><i>{author}</i></span>
-            <span><i>{Date.toDate().toDateString()}</i></span>
+            <span className='ml-5'><i>{Date.toDate().toDateString()}</i></span>
         </div>
         <hr />
     </div>
