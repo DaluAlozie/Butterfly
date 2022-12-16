@@ -10,12 +10,12 @@ const Contact: NextPage = () => {
   const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-24 w-1/4 h-max"
   return (
     <div className='w-full h-screen min-h-screen bg-white min-w-max'>
-      {/* <div className='flex flex-col justify-between w-screen bg-white pb-52 min-h-max min-w-max'>
-        <div className='w-full contact-us-banner'>
+      <div className='flex flex-col justify-between w-screen bg-white pb-52 min-h-max min-w-max'>
+        {/* <div className='w-full contact-us-banner'>
           <div className='mt-16 text-center home-message'>
             <b>Contact Us</b>
           </div>
-        </div>
+        </div> */}
         <div className='flex flex-row content-center justify-between w-full px-1 align-middle bg-white min-w-max min-h-max'>
           <div className={cellClass}>
             <Image src={email}
@@ -74,7 +74,7 @@ const Contact: NextPage = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
     </div>
 
