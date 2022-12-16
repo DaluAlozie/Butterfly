@@ -50,7 +50,7 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right side */}
-      <div className='flex-col w-full h-full mb-10 xl:flex xl:w-1/2 min-h-max bg-sky-50'>
+      <div className='flex-col w-full h-full mb-10 xl:flex xl:w-1/2 min-h-max bg-sky-50 min-w-fit'>
         <nav className='flex flex-wrap items-start justify-center w-full px-5 py-4 pt-5 bg-fixed collapse-hide'>
           <div  className='justify-around w-full ml-8 lg:inline-flex lg:flex-grow lg:w-auto'>
             <div id="navbar" className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
