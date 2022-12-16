@@ -59,6 +59,21 @@ const Contact: NextPage = () => {
                 </Image>  
               </a>   
           </div>
+          <div className={cellClass}>
+            <Image src={campus}
+                      height={120}
+                      width={120}
+                      alt="Logo"
+                      >
+            </Image>
+            
+            <div className='my-5'>Visit us at </div>
+            <div>
+              <div>Butterfly Technologies, Warwick University,</div>
+              <div>Gibbet Hill Rd, Coventry,</div>
+              <div>CV4 7ES, United Kingdom</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
