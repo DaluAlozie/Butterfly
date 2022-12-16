@@ -19,6 +19,19 @@ const Contact: NextPage = () => {
   
       </div>
       <div className='flex flex-row content-center justify-between w-full px-1 align-middle bg-white min-h-max'>
+      <div className={cellClass}>
+        <Image src={email}
+                height={120}
+                width={120}
+                alt="Logo"
+                >
+        </Image>  
+        <div className='mt-1 mb-2'>Email us at</div>
+        <div>
+        admin@butterfly-social.com
+        </div>
+
+</div>
       </div>
 
     </div>
