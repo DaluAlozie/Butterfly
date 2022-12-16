@@ -5,7 +5,7 @@ import insta from '../../web_assets/web_assets/Insta-logo.svg'
 
 const Footer: NextPage = () => {
   return(
-    <footer className='bottom-0 flex flex-col justify-center w-full py-10 bg-custom-footer h-3/5 min-h-max h-max'>
+    <footer className='bottom-0 flex flex-col justify-center w-full py-10 bg-custom-footer min-h-max h-max'>
 
         <div className="flex flex-col items-center justify-between h-48 p-4 text-xl text-center text-white">
           <div>Butterfly Technologies, Warwick University,</div>

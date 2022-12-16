@@ -91,9 +91,8 @@ body{
 .contact-us-banner{
 
     background-image: url('../web_assets/web_assets/contact-us.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 150%;
-    width: 100vw;
+    background-size: cover;
+    background-position: center;
     height: 70vh;
 
 
