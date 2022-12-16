@@ -18,6 +18,8 @@ const Contact: NextPage = () => {
         </div> */}
   
       </div>
+      <div className='flex flex-row content-center justify-between w-full px-1 align-middle bg-white min-h-max'>
+      </div>
 
     </div>
 
