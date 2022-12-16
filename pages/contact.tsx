@@ -18,8 +18,8 @@ const Contact: NextPage = () => {
         </div> */}
   
       </div>
-      <div className='flex flex-row content-center justify-around w-full px-1 align-middle bg-white min-h-max'>
-        <div className={cellClass}>
+      <div className='flex flex-row w-full bg-white min-h-max justify-evenly'>
+        <div className={cellClass + " self-start"}>
           <Image src={email}
                   height={10}
                   width={10}
@@ -32,7 +32,7 @@ const Contact: NextPage = () => {
           </div>
 
         </div>
-        <div className={cellClass}>
+        <div className={cellClass + " self-center"}>
           <Image src={socialMedia}
                     height={10}
                     width={10}
@@ -61,7 +61,7 @@ const Contact: NextPage = () => {
           </div>
 
         </div>
-        <div className={cellClass}>
+        <div className={cellClass + " self-end"}>
             <Image src={campus}
                       height={10}
                       width={10}
