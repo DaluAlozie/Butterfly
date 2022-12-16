@@ -54,8 +54,7 @@ const Nav: NextPage = () => {
     nav!.classList.toggle("collapse-show");
   }
   return (
-    <nav id="nav" className='sticky top-0 flex flex-wrap items-center justify-center w-full px-5 overflow-hidden bg-fixed zIndex-50 bg-custom-nav collapse-hide min-h-36'>
-      
+    <nav id="nav" className='sticky top-0 flex flex-wrap items-center justify-center w-screen min-w-full min-h-screen px-5 overflow-hidden bg-fixed bg-white zIndex-50 bg-custom-nav collapse-hide min-h-36'>
         <Link href='/'>
         {/* This height deterines height of nav */}
         <a className='inline-flex items-center h-32 px-2 py-2 mr-10'>
