@@ -5,12 +5,6 @@ import { doc,collection, getDocs, query, DocumentData, orderBy} from "firebase/f
 import db from '../firebase/config';
 import { PostType } from '../components/blog/props';
 
-interface Props {
-  
-}
-
-
-
 
 const Blog: NextPage = () => {
   const [posts,setPosts] = useState<DocumentData>([])

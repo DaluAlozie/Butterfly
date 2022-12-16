@@ -56,7 +56,6 @@ body{
 
     max-height: 390px;
     transition: max-height 0.25s ease-in-out;
-    overflow: visible;
 }
 
 /* hide nav on scroll */
@@ -85,17 +84,30 @@ body{
 
 .bg-home{
     background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
+    
+}
+
+/* Contact background */
+.contact-us-banner{
+
+    background-image: url('../web_assets/web_assets/contact-us.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 150%;
+    width: 100vw;
+    height: 70vh;
+
+
 }
 
 
 /* Font for butterfly in header */
 @font-face {
     font-family: 'logo-font';
-    src: url('../web_assets/web_assets/ergonomique-bold.ttf');
+    src: url('../web_assets/web_assets/Ubuntu/Ubuntu-Bold.ttf');
 }
 @font-face {
     font-family: 'home-message-font';
-    src: url('../web_assets/web_assets/ye-paradigma-italic-light.otf');
+    src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-LightItalic.ttf');
 }
 
 /* About page */

@@ -44,19 +44,17 @@ const Nav: NextPage = () => {
 
   const collapse =() => {
     const nav = document.getElementById("nav");
+    const navbar  = document.getElementById("navbar");
 
     //Removing scroll events as it interferes with collapse
     nav?.classList.remove("scroll-show");
-    nav?.classList.remove("scroll-hode");
+    nav?.classList.remove("scroll-hide");
 
     nav!.classList.toggle("collapse-hide");
     nav!.classList.toggle("collapse-show");
-    
-    document.getElementById("navbar")!.classList.toggle("hidden");
-
   }
   return (
-    <nav id="nav" className='sticky top-0 flex flex-wrap items-center justify-center px-5 bg-fixed bg-custom-nav collapse-hide min-h-36'>
+    <nav id="nav" className='zIndex-50 sticky top-0 flex flex-wrap items-center justify-center px-5 overflow-hidden bg-fixed bg-custom-nav collapse-hide min-h-36'>
       
         <Link href='/'>
         {/* This height deterines height of nav */}
@@ -74,7 +72,7 @@ const Nav: NextPage = () => {
         </a>
         </Link>
         <button onClick={collapse} 
-        className='fixed right-0 inline-flex p-3 ml-10 mr-3 text-white rounded outline-none top-8 lg:hidden hover:text-white'>
+        className='absolute right-0 inline-flex p-3 mt-0 ml-10 mr-3 text-white rounded outline-none top-8 lg:hidden hover:text-white'>
         <svg
             className='w-6 h-6'
             fill='none'
@@ -90,7 +88,7 @@ const Nav: NextPage = () => {
             />
         </svg>
         </button>
-        <div id="navbar" className='items-center justify-end hidden w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
+        <div id="navbar" className='items-center justify-end w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
           <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
             <Link href='/'>
             <a className={NavLink}>

@@ -43,7 +43,7 @@ const Home: NextPage = () => {
           </div>
         </nav>
         {/* main content */}
-        <div className='flex flex-col items-center min-h-screen min-w-screen bg-inherit'>
+        <div className='flex flex-col items-center min-h-screen py-48 min-w-screen bg-inherit'>
           <div className='italic home-message'><i>“ Spread your </i></div>
           <div className='home-message'> <i>social wings ”</i></div>
         </div>

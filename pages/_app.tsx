@@ -17,12 +17,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Main>
       <Component {...pageProps} />
       </Main>
-      {
-        (
-          router.route !== "/") && (
-          <Footer/>
-        )
-      }
     </div>
 
 
