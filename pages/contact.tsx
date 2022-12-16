@@ -21,8 +21,8 @@ const Contact: NextPage = () => {
       <div className='flex flex-row content-center justify-around w-full px-1 align-middle bg-white min-h-max'>
         <div className={cellClass}>
           <Image src={email}
-                  height={120}
-                  width={120}
+                  height={10}
+                  width={10}
                   alt="Logo"
                   >
           </Image>  
@@ -34,8 +34,8 @@ const Contact: NextPage = () => {
         </div>
         <div className={cellClass}>
           <Image src={socialMedia}
-                    height={120}
-                    width={120}
+                    height={10}
+                    width={10}
                     alt="Logo"
                     >
           </Image> 
@@ -63,14 +63,14 @@ const Contact: NextPage = () => {
         </div>
         <div className={cellClass}>
             <Image src={campus}
-                      height={120}
-                      width={120}
+                      height={10}
+                      width={10}
                       alt="Logo"
                       >
             </Image>
             
             <div className='my-5'>Visit us at </div>
-            <div>
+            <div className='text-sm'>
               <div>Butterfly Technologies, Warwick University,</div>
               <div>Gibbet Hill Rd, Coventry,</div>
               <div>CV4 7ES, United Kingdom</div>
