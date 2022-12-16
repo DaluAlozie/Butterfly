@@ -9,14 +9,14 @@ import campus from '../web_assets/web_assets/campus.svg'
 const Contact: NextPage = () => {
   const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-24 w-1/4 h-max"
   return (
-    <div className='bg-white w-screen h-screen'>
-      <div className='flex flex-col justify-between w-screen bg-white min-h-max'>
-        <div className=' contact-us-banner w-screen'>
-          <div className='text-center home-message mt-16'>
+    <div className='w-full h-screen min-h-screen bg-white min-w-max'>
+      <div className='flex flex-col justify-between w-screen bg-white pb-52 min-h-max min-w-max'>
+        <div className='w-full contact-us-banner'>
+          <div className='mt-16 text-center home-message'>
             <b>Contact Us</b>
           </div>
         </div>
-        <div className='flex flex-row content-center justify-between w-full align-middle bg-white h-max px-1'>
+        <div className='flex flex-row content-center justify-between w-full px-1 align-middle bg-white min-w-max min-h-max'>
           <div className={cellClass}>
             <Image src={email}
                       height={120}
@@ -39,7 +39,7 @@ const Contact: NextPage = () => {
             </Image> 
             
             <div className='mt-1 mb-5'> Follow us on</div>
-            <div className='flex flex-row content-center justify-evenly w-1/2 self-center	min-w-max min-h-max'>
+            <div className='flex flex-row content-center self-center w-1/2 justify-evenly min-w-max min-h-max'>
               <a className='mx-5' href="https://www.instagram.com/butterfly.warwick/" target="_blank" rel="noopener noreferrer">
                   <Image src={insta}
                     height={40}
@@ -75,6 +75,7 @@ const Contact: NextPage = () => {
           </div>
         </div>
       </div>
+
     </div>
 
   )

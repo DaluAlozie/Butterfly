@@ -75,7 +75,8 @@ body{
 .home-message{
     font-family: 'home-message-font';
     color: white;
-    font-size: 60px;    
+    font-size: 80px;    
+    white-space: nowrap;
 }
 
 .join-button{
@@ -94,8 +95,6 @@ body{
     background-size: cover;
     background-position: center;
     height: 70vh;
-
-
 }
 
 
