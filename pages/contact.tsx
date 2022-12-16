@@ -9,18 +9,18 @@ import campus from '../web_assets/web_assets/campus.svg'
 const Contact: NextPage = () => {
   const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-24 w-1/3 h-max"
   return (
-    <div className='w-screen h-screen min-h-screen bg-white min-w-max'>
+    <div className='w-full h-screen min-h-screen bg-white min-w-max'>
       <div className='flex flex-col justify-between w-full bg-white min-w-max pb-52 min-h-max'>
         {/* <div className='w-full contact-us-banner'>
           <div className='mt-16 text-center home-message'>
             <b>Contact Us</b>
           </div>
         </div> */}
-        <div className='flex flex-row content-center justify-between w-screen px-1 align-middle bg-white min-h-max'>
+        <div className='flex flex-row content-center justify-between w-full px-1 align-middle bg-white min-h-max'>
           <div className={cellClass}>
             <Image src={email}
-                      height={20}
-                      width={20}
+                      height={120}
+                      width={120}
                       alt="Logo"
                       >
             </Image>  
@@ -32,8 +32,8 @@ const Contact: NextPage = () => {
           </div>
           <div className={cellClass}>
             <Image src={socialMedia}
-                      height={20}
-                      width={20}
+                      height={120}
+                      width={120}
                       alt="Logo"
                       >
             </Image> 
@@ -60,8 +60,8 @@ const Contact: NextPage = () => {
           </div>
           <div className={cellClass}>
             <Image src={campus}
-                      height={20}
-                      width={20}
+                      height={120}
+                      width={120}
                       alt="Logo"
                       >
             </Image>
