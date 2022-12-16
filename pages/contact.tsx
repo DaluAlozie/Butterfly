@@ -59,7 +59,9 @@ const Contact: NextPage = () => {
                 </Image>  
               </a>   
           </div>
-          <div className={cellClass}>
+
+        </div>
+        <div className={cellClass}>
             <Image src={campus}
                       height={120}
                       width={120}
@@ -74,7 +76,6 @@ const Contact: NextPage = () => {
               <div>CV4 7ES, United Kingdom</div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
