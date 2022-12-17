@@ -28,12 +28,12 @@ const Nav: NextPage = () => {
       let currentScroll: number = window.scrollY; 
       let diff: number = currentScroll - scrollY;
 
-      if (diff < 0 && currentScroll >= 0  && !((window.innerHeight + window.scrollY) >= document.body.offsetHeight)){
+      if (diff < 0 && currentScroll >= 0){
         nav?.classList.remove("scroll-hide");
         nav?.classList.add("scroll-show");
       } 
       
-      else if(diff > 0 && currentScroll > navHeight){
+      else if(diff > 0 && currentScroll > navHeight && !((window.innerHeight + window.scrollY) >= document.body.scrollHeight)){
         nav?.classList.remove("scroll-show");
         nav?.classList.add("scroll-hide");
       }
