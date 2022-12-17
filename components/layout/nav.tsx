@@ -7,7 +7,7 @@ import {useState, useEffect, useRef} from 'react'
 let scrollY: number;
 
 
-const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white font-sans text-3xl"
+const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white font-sans text-3xl my-1"
 const Nav: NextPage = () => {
 
 
@@ -28,7 +28,7 @@ const Nav: NextPage = () => {
       let currentScroll: number = window.scrollY; 
       let diff: number = currentScroll - scrollY;
 
-      if (diff < 0){
+      if (diff < 0 && currentScroll >= 0){
         nav?.classList.remove("scroll-hide");
         nav?.classList.add("scroll-show");
       } 
