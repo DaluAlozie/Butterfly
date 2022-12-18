@@ -43,9 +43,9 @@ const Home: NextPage = () => {
           </div>
         </nav>
         {/* main content */}
-        <div className='flex flex-col items-center min-h-screen py-48 min-w-screen bg-inherit'>
+        <div className='flex flex-col items-center min-h-screen py-28 min-w-screen bg-inherit'>
           <div className='italic home-message mr-72'><i>“ Spread your </i></div>
-          <div className='ml-52 home-message'> <i>social wings ”</i></div>
+          <div className='ml-12 home-message'> <i>social wings ”</i></div>
         </div>
       </div>
 

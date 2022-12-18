@@ -9,16 +9,16 @@ import campus from '../web_assets/web_assets/campus.svg'
 const Contact: NextPage = () => {
   const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-24 w-40 h-max"
   return (
-    <div className='w-full h-screen min-h-screen bg-white min-w-max'>
-      <div className='flex flex-col justify-between w-full bg-white min-w-max min-h-max'>
-        <div className='w-full contact-us-banner'>
-          <div className='mt-16 text-center home-message'>
-            <b>Contact Us</b>
+    <div className='w-full h-max min-h-screen bg-white min-w-max'>
+      <div className='flex flex-col justify-between w-full h-max min-w-max min-h-max'>
+        <div className='w-full contact-us-banner h-max py-24'>
+          <div className='text-center bold-italic text-8xl text-white'>
+            Contact Us
           </div>
         </div>
-  
+
       </div>
-      <div className='flex flex-row w-full bg-white min-h-max justify-evenly'>
+      <div className='flex flex-row w-full h-max min-h-max justify-evenly'>
         <div className={cellClass}>
           <Image src={email}
                   height={120}

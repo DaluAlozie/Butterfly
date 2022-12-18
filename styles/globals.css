@@ -9,6 +9,9 @@ body{
     height: 100vh;
 }
 /* Nav link styles */
+nav{
+    z-index: 100;
+}
 .link-underline {
     background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
     background-size: 0 3px;
@@ -96,6 +99,21 @@ body{
     background-position: center;
     height: 70vh;
 }
+/* Blog background */
+.team-banner{
+    background-image: url('../web_assets/web_assets/team.png');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+}
+
+/* Swiper */
+.team-swiper{
+    max-width: 1330px;
+}
+
+
+
 
 
 /* Font for butterfly in header */
@@ -106,6 +124,14 @@ body{
 @font-face {
     font-family: 'home-message-font';
     src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: 'bold-italic';
+    src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-BoldItalic.ttf');
+}
+.bold-italic{
+    font-family: "bold-italic";
 }
 
 /* About page */

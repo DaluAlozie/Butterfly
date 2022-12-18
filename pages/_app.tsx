@@ -7,7 +7,7 @@ import Footer from '../components/layout/footer';
 function MyApp({ Component, pageProps, router }: AppProps) {
   
   return(
-    <div className='w-screen h-screen bg-sky-50 min-w-max'>
+    <div className='w-screen h-max bg-sky-50 min-w-max min-h-screen flex flex-col justify-between'>
       {
         (
           router.route !== "/") && (
@@ -17,6 +17,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Main>
       <Component {...pageProps} />
       </Main>
+      {
+        (
+          router.route !== "/") && (
+            <Footer></Footer>
+            )
+      }
     </div>
 
 

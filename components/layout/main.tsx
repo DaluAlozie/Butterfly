@@ -8,7 +8,7 @@ type Props = {
 
 const Main: NextPage<Props> = ({ children } : Props) => {
   return (
-    <div className='w-full h-full min-h-screen bg-sky-50 min-w-max'>
+    <div className='w-full h-max min-h-screen bg-sky-max min-w-max zIndex-40'>
       {children}
     </div>
   )
