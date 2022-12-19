@@ -8,6 +8,8 @@ import Image from 'next/image';
 import ceo from '../web_assets/web_assets/ceo.png'
 import cfo from '../web_assets/web_assets/cfo.png'
 import cto from '../web_assets/web_assets/cto.png'
+import techLead1 from '../web_assets/web_assets/techLead1.png'
+
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -49,8 +51,7 @@ const Blog: NextPage = () => {
 
   return (
   <div className='flex flex-col items-center w-full h-max min-h-screen justify-center'>
-    <div className='h-96'></div>
-    <div className='h-20 mb-4'>
+    <div className='h-72 mb-4'>
       {
         posts.map((post: PostType) => 
         <Post key={post.timeStamp.nanoseconds+post.timeStamp.seconds} 
@@ -108,6 +109,18 @@ const Blog: NextPage = () => {
                 <div className={memberRole}>CTO</div>
               </div>
             </SwiperSlide>
+            <SwiperSlide>
+              <div className={member}>
+                <Image
+                  src={techLead1}
+                  alt="Picture of the tech lead"
+                  width={200}
+                  height={200}
+                />
+                <div className={memberName}>Jessica Daniels</div>
+                <div className={memberRole}>Tech Lead</div>
+              </div>
+            </SwiperSlide>
           </Swiper>
         </div>
       </div>
@@ -160,6 +173,18 @@ const Blog: NextPage = () => {
               <div className={memberRole}>CTO</div>
             </div>
           </SwiperSlide>
+          <SwiperSlide>
+              <div className={member}>
+                <Image
+                  src={techLead1}
+                  alt="Picture of the tech lead"
+                  width={200}
+                  height={200}
+                />
+                <div className={memberName}>Jessica Daniels</div>
+                <div className={memberRole}>Tech Lead</div>
+              </div>
+            </SwiperSlide>
         </Swiper>
       </div>
     </div>
