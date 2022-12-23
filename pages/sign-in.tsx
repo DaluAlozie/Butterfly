@@ -21,15 +21,6 @@ const SignIn: NextPage = () => {
         } else {
         // No user is signed in.
         }
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-              // User is signed in, see docs for a list of available properties
-              // https://firebase.google.com/docs/reference/js/firebase.User
-              // ...
-            } else {
-                router.push("/sign-in")
-            }
-        });
     })
 
     const handleSignIn = async () => {

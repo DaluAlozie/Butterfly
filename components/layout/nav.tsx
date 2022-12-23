@@ -58,7 +58,7 @@ const Nav: NextPage = () => {
       
         <Link href='/'>
         {/* This height deterines height of nav */}
-        <span className='inline-flex items-center h-32 px-2 py-2 mr-10'>
+        <div className='inline-flex items-center h-32 px-2 py-2 mr-10'>
           <Image src={logo}
               height={50}
               width={50}
@@ -68,8 +68,8 @@ const Nav: NextPage = () => {
           <div className='ml-3 logo-text'>
             butterfly
           </div>
-          <span className='mb-6 text-6xl text-white'>.</span>
-        </span>
+          <div className='mb-6 text-6xl text-white'>.</div>
+        </div>
         </Link>
         <button onClick={collapse} 
         className='absolute right-0 inline-flex p-3 mt-0 ml-10 mr-3 text-white rounded outline-none top-8 lg:hidden hover:text-white'>
@@ -91,24 +91,24 @@ const Nav: NextPage = () => {
         <div id="navbar" className='items-center justify-end w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
           <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
             <Link href='/'>
-            <span className={NavLink}>
+            <div className={NavLink}>
                 Home
-            </span>
+            </div>
             </Link>
             <Link href='/blog'>
-                <span className={NavLink}>
+                <div className={NavLink}>
                   Blog
-                </span>
+                </div>
             </Link>
             <Link href='/about'>
-                <span className={NavLink}>
+                <div className={NavLink}>
                   About
-                </span>
+                </div>
             </Link>
             <Link href='/contact'>
-                <span className={NavLink}>
+                <div className={NavLink}>
                     Contact
-                </span>
+                </div>
             </Link>  
             <a href="https://www.linkedin.com/company/butterflytechnologies/" target="_blank" rel="noopener noreferrer">
               <Image src={linkedinIcon}

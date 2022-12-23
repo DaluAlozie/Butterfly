@@ -55,24 +55,24 @@ const Home: NextPage = () => {
           <div  className='justify-around w-full ml-8 lg:inline-flex lg:flex-grow lg:w-auto'>
             <div id="navbar" className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
               <Link href='/'>
-                <span className={NavLink}>
+                <div className={NavLink}>
                     Home
-                </span>
+                </div>
               </Link>
               <Link href='/blog'>
-                <span className={NavLink}>
+                <div className={NavLink}>
                   Blog
-                </span>
+                </div>
               </Link>
               <Link href='/about'>
-                <span className={NavLink}>
+                <div className={NavLink}>
                   About
-                </span>
+                </div>
               </Link>
               <Link href='/contact'>
-                <span className={NavLink}>
+                <div className={NavLink}>
                     Contact
-                </span>
+                </div>
               </Link>           
             </div>
           </div>

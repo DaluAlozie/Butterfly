@@ -53,7 +53,7 @@ const Blog: NextPage = () => {
 
   return (
   <div className='flex flex-col items-center justify-start w-full min-h-screen h-max'>
-    <div className='w-full mb-4 bg-black h-72'>
+    <div className='w-full mb-4 h-72'>
       {
         posts.map((post: PostType) => 
         <Post key={post.timeStamp.nanoseconds+post.timeStamp.seconds} 
