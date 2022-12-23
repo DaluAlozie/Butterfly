@@ -134,6 +134,16 @@ nav{
     font-family: "bold-italic";
 }
 
+
+@font-face {
+    font-family: 'sans-regular';
+    src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+}
+.sans-regular{
+    font-family: "sans-regular";
+}
+
+
 /* About page */
 
 .bg-about{

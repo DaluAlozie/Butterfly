@@ -58,7 +58,7 @@ const Nav: NextPage = () => {
       
         <Link href='/'>
         {/* This height deterines height of nav */}
-        <a className='inline-flex items-center h-32 px-2 py-2 mr-10'>
+        <span className='inline-flex items-center h-32 px-2 py-2 mr-10'>
           <Image src={logo}
               height={50}
               width={50}
@@ -69,7 +69,7 @@ const Nav: NextPage = () => {
             butterfly
           </div>
           <span className='mb-6 text-6xl text-white'>.</span>
-        </a>
+        </span>
         </Link>
         <button onClick={collapse} 
         className='absolute right-0 inline-flex p-3 mt-0 ml-10 mr-3 text-white rounded outline-none top-8 lg:hidden hover:text-white'>
@@ -91,24 +91,24 @@ const Nav: NextPage = () => {
         <div id="navbar" className='items-center justify-end w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
           <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
             <Link href='/'>
-            <a className={NavLink}>
+            <span className={NavLink}>
                 Home
-            </a>
+            </span>
             </Link>
             <Link href='/blog'>
-                <a className={NavLink}>
+                <span className={NavLink}>
                   Blog
-                </a>
+                </span>
             </Link>
             <Link href='/about'>
-                <a className={NavLink}>
+                <span className={NavLink}>
                   About
-                </a>
+                </span>
             </Link>
             <Link href='/contact'>
-                <a className={NavLink}>
+                <span className={NavLink}>
                     Contact
-                </a>
+                </span>
             </Link>  
             <a href="https://www.linkedin.com/company/butterflytechnologies/" target="_blank" rel="noopener noreferrer">
               <Image src={linkedinIcon}

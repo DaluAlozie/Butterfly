@@ -9,10 +9,10 @@ import campus from '../web_assets/web_assets/campus.svg'
 const Contact: NextPage = () => {
   const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-24 w-40 h-max"
   return (
-    <div className='w-full h-max min-h-screen bg-white min-w-max'>
+    <div className='w-full min-h-screen bg-white h-max min-w-max'>
       <div className='flex flex-col justify-between w-full h-max min-w-max min-h-max'>
-        <div className='w-full contact-us-banner h-max py-24'>
-          <div className='text-center bold-italic text-8xl text-white'>
+        <div className='w-full py-24 contact-us-banner h-max'>
+          <div className='text-center text-white bold-italic text-8xl'>
             Contact Us
           </div>
         </div>
@@ -24,8 +24,9 @@ const Contact: NextPage = () => {
                   height={120}
                   width={120}
                   alt="Logo"
+                  className='self-center'
                   >
-          </Image>  
+          </Image>    
           <div className='mt-1 mb-2'>Email us at</div>
           <div>
           admin@butterfly-social.com
@@ -37,6 +38,7 @@ const Contact: NextPage = () => {
                     height={120}
                     width={120}
                     alt="Logo"
+                    className='self-center'
                     >
           </Image> 
           
@@ -47,6 +49,8 @@ const Contact: NextPage = () => {
                   height={40}
                   width={40}
                   alt="Logo"
+                  className='self-center'
+
                   >
               </Image>  
               </a>      
@@ -66,10 +70,11 @@ const Contact: NextPage = () => {
                       height={120}
                       width={120}
                       alt="Logo"
+                      className='self-center'
                       >
             </Image>
             
-            <div className='my-5'>Visit us at </div>
+            <div className='my-2'>Visit us at </div>
             <div className='text-sm'>
               <div>Butterfly Technologies, Warwick University,</div>
               <div>Gibbet Hill Rd, Coventry,</div>

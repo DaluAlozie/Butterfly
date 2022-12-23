@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Footer: NextPage = () => {
   return(
-    <footer className='flex flex-row justify-evenly w-full py-4 bg-gray-200 min-h-max h-max text-gray-400'>
+    <footer className='flex flex-row w-full py-4 text-gray-400 bg-gray-200 justify-evenly min-h-max h-max'>
       <div>
         <a className='mx-5' href="https://www.iubenda.com/privacy-policy/87428725" target="_blank" rel="noopener noreferrer">
             Privacy Policy
@@ -15,9 +15,9 @@ const Footer: NextPage = () => {
       <div>© Butterfly Technologies</div>
       <div>
         <Link href='/contact'>
-            <a className="">
+            <span className="">
               Contact us
-            </a>
+            </span>
         </Link>
       </div>
 

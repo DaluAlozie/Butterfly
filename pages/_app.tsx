@@ -7,7 +7,7 @@ import Footer from '../components/layout/footer';
 function MyApp({ Component, pageProps, router }: AppProps) {
   
   return(
-    <div className='w-screen h-max bg-sky-50 min-w-max min-h-screen flex flex-col justify-between'>
+    <div className='flex flex-col justify-between w-screen min-h-screen h-max bg-sky-50 min-w-max'>
       {
         (
           router.route !== "/") && (
