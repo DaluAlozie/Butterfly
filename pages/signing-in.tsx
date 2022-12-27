@@ -3,6 +3,7 @@ import { getAuth, isSignInWithEmailLink, signInWithEmailLink } from "firebase/au
 import toast from 'react-hot-toast';
 import { use, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { db } from '../firebase/config';
 
 const SigningIn: NextPage = () => { 
     const router = useRouter()  
@@ -26,7 +27,7 @@ const SigningIn: NextPage = () => {
             // Clear email from storage.
             window.localStorage.removeItem('emailForSignIn');
             toast.success("Sign in Successful")
-            router.push("/")
+            // router.push("/")
             // You can access the new user via result.user
             // Additional user info profile not available via:
             // result.additionalUserInfo.profile == null

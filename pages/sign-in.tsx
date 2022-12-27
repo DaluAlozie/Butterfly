@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { getAuth, sendSignInLinkToEmail, onAuthStateChanged  } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore"; 
-import db from '../firebase/config';
+import { db }  from '../firebase/config';
 import { actionCodeSettings } from '../components/signIn/codeSettings';
 import { useState,useEffect } from 'react';
 

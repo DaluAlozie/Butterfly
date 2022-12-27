@@ -4,13 +4,4 @@ export const actionCodeSettings = {
     url: 'https://butterfly-chi.vercel.app/signing-in',
     // This must be true.
     handleCodeInApp: true,
-    iOS: {
-      bundleId: 'com.example.ios'
-    },
-    android: {
-      packageName: 'com.example.android',
-      installApp: true,
-      minimumVersion: '12'
-    },
-    dynamicLinkDomain: 'butterfly-chi.vercel.app'
   };

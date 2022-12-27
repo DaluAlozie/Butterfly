@@ -115,6 +115,7 @@ const Nav: NextPage = () => {
                 height={40}
                 width={40}
                 alt="Logo"
+                className='mb-2'
                 >
             </Image>  
             </a> 

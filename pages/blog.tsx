@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { useState, useEffect } from 'react'
 import Post from '../components/blog/post'
 import { doc,collection, getDocs, query, DocumentData, orderBy} from "firebase/firestore"; 
-import db from '../firebase/config';
+import { db } from '../firebase/config';
 import { PostType } from '../components/blog/props';
 import Image from 'next/image';
 import ceo from '../web_assets/web_assets/ceo.png'
@@ -72,8 +72,6 @@ const Blog: NextPage = () => {
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
           >
             <SwiperSlide>
               <div className={member}>
@@ -147,8 +145,6 @@ const Blog: NextPage = () => {
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
           
         >
           <SwiperSlide>

@@ -10,7 +10,6 @@ import { useRouter } from 'next/router';
 function MyApp({ Component, pageProps }: AppProps) {
 
   const router = useRouter()
-  
   return(
     <div className='flex flex-col justify-between w-screen min-h-screen h-max bg-sky-50 min-w-max'>
       {
@@ -25,12 +24,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       {
         (
           router.route !== "/") && (
-            <Footer></Footer>
-            )
+          <Footer></Footer>
+        )
       }
     </div>
-
-
   ) 
 }
 

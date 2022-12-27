@@ -57,7 +57,7 @@ nav{
 #nav.collapse-show{
     height: max-content;
 
-    max-height: 395px;
+    max-height: 400px;
     transition: max-height 0.25s ease-in-out;
 }
 
