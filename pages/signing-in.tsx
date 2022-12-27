@@ -27,7 +27,7 @@ const SigningIn: NextPage = () => {
             // Clear email from storage.
             window.localStorage.removeItem('emailForSignIn');
             toast.success("Sign in Successful")
-            // router.push("/")
+            router.push("/")
             // You can access the new user via result.user
             // Additional user info profile not available via:
             // result.additionalUserInfo.profile == null
