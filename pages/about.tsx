@@ -5,7 +5,7 @@ const About: NextPage = () => {
   <div className='w-full h-max p-12 text-4xl bg-about bg-sky-50 min-h-screen'>
     <div className='flex flex-col justify-between items-center w-full h-80'>
       <div className='bold-italic'>
-        Butterfly App
+        Butterfly 
       </div>
       <div>
 
@@ -13,7 +13,7 @@ const About: NextPage = () => {
     </div>
     <div className='flex flex-col justify-between items-center w-full h-80'>
       <div className='bold-italic'>
-        Companion App
+        Butterfly Companion
       </div>
       <div>
 

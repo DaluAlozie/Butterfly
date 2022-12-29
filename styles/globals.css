@@ -51,15 +51,22 @@ nav{
 
 /* Custom collapse */
 #nav.collapse-hide{
-    height: max-content;
-    max-height: 120px;
-}
-#nav.collapse-show{
-    height: max-content;
+    height: 120px;
+    transition: height 0.25s ease-in-out;
 
-    max-height: 400px;
-    transition: max-height 0.25s ease-in-out;
 }
+
+@media (max-width: 900px){
+    #nav.collapse-show{
+        height: 430px;
+        transition: height 0.25s ease-in-out;
+        -webkit-transition: height 0.25s ease-in-out;
+        -moz-transition: height 0.25s ease-in-out;
+        -ms-transition: height 0.25s ease-in-out;
+        -o-transition: height 0.25s ease-in-out;
+}
+}
+
 
 /* hide nav on scroll */
 #nav.scroll-hide{

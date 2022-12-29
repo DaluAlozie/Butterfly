@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
-import { getAuth, sendSignInLinkToEmail, onAuthStateChanged  } from "firebase/auth";
+import { sendSignInLinkToEmail, onAuthStateChanged  } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore"; 
-import { db }  from '../firebase/config';
+import { db, auth }  from '../firebase/config';
 import { actionCodeSettings } from '../components/signIn/codeSettings';
 import { useState,useEffect } from 'react';
 
@@ -13,7 +13,6 @@ const SignIn: NextPage = () => {
     const router = useRouter()
     
     useEffect(() => {
-        const auth = getAuth();
         const user = auth.currentUser;
 
         if (user) {
@@ -23,7 +22,7 @@ const SignIn: NextPage = () => {
         }
     })
 
-    const handleSignIn = async () => {
+    const handleSignIn = async (e: React.MouseEvent<HTMLElement>) => {
         //Check if email is authorised 
         const q = query(collection(db, "Users"), where("email", "==", email));
         const querySnapshot = await getDocs(q);
@@ -32,7 +31,6 @@ const SignIn: NextPage = () => {
             toast.error("Email not authorised")
         }
         else{
-            const auth = getAuth();
             sendSignInLinkToEmail(auth, email, actionCodeSettings)
                 .then(() => {
                 // The link was successfully sent. Inform the user.
@@ -46,6 +44,8 @@ const SignIn: NextPage = () => {
                 console.error(error.message)
             });
         }
+
+        (e.target as HTMLInputElement).value = ""
     } 
 
     return (

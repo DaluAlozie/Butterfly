@@ -4,7 +4,7 @@ import Main from '../components/layout/main';
 import Header from '../components/layout/header';
 import Footer from '../components/layout/footer';
 import { useEffect } from 'react';
-import { getAuth, onAuthStateChanged  } from "firebase/auth";
+import { onAuthStateChanged  } from "firebase/auth";
 import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }: AppProps) {

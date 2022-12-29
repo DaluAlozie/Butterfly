@@ -1,14 +1,13 @@
 import type { NextPage } from 'next'
-import { getAuth, isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
+import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 import toast from 'react-hot-toast';
-import { use, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { db } from '../firebase/config';
+import { auth } from '../firebase/config';
 
 const SigningIn: NextPage = () => { 
     const router = useRouter()  
     useEffect( () => {
-        const auth = getAuth();
         if (isSignInWithEmailLink(auth, window.location.href)) {
         // Additional state parameters can also be passed via URL.
         // This can be used to continue the user's intended action before triggering
@@ -36,11 +35,18 @@ const SigningIn: NextPage = () => {
             })
             .catch((error) => {
                 console.error(error)
+                toast.error("Sign in Unsucessful")
+                router.push("/")
+
             // Some error occurred, you can inspect the code: error.code
             // Common errors could be invalid email and invalid or expired OTPs.
             });
         }
-    })
+        else{
+            toast.error("Sign in Unsucessful")
+            router.push("/")
+        }
+    },[router])
     return (
         <div className='w-full h-screen p-12 text-4xl'>
             Signing in .......
