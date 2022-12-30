@@ -2,12 +2,10 @@ import type { NextPage } from 'next'
 import linkedinIcon from '../web_assets/web_assets/linkedin-icon.png'
 import Image from 'next/image'
 import logo from '../web_assets/web_assets/whitelogo.svg'
-import Link from 'next/link'
-
-
-const NavLink = "h-14 items-center justify-center min-w-max mx-4 link-underline link-underline-black text-black mt-2 font-sans text-4xl"
+import HomeNav from '../components/index/nav'
 
 const Home: NextPage = () => {
+
   return (
     <div className='flex flex-row flex-wrap-reverse w-screen h-max min-w-min'>
       {/* Left side */}
@@ -50,33 +48,8 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right side */}
-      <div className='flex-col w-full h-full mb-10 xl:flex xl:w-1/2 min-h-max bg-sky-50 min-w-fit'>
-        <nav className='flex flex-wrap items-start justify-center w-full px-5 py-4 pt-5 bg-fixed collapse-hide'>
-          <div  className='justify-around w-full ml-8 lg:inline-flex lg:flex-grow lg:w-auto'>
-            <div id="navbar" className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
-              <Link href='/'>
-                <div className={NavLink}>
-                    Home
-                </div>
-              </Link>
-              <Link href='/blog'>
-                <div className={NavLink}>
-                  Blog
-                </div>
-              </Link>
-              <Link href='/about'>
-                <div className={NavLink}>
-                  About
-                </div>
-              </Link>
-              <Link href='/contact'>
-                <div className={NavLink}>
-                    Contact
-                </div>
-              </Link>           
-            </div>
-          </div>
-        </nav>
+      <div className='flex-col w-full h-full mb-10 xl:flex xl:w-1/2 min-h-max bg-sky-50'>
+        <HomeNav/>
 
         {/* main content */}
         <div className='relative min-h-screen min-w-screen bg-inherit'>

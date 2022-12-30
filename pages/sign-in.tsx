@@ -8,6 +8,7 @@ import { useState,useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/router';
 
+const emailValidator = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
 const SignIn: NextPage = () => {
     const [email, setEmail] = useState<string>("")
     const router = useRouter()
@@ -23,6 +24,11 @@ const SignIn: NextPage = () => {
     })
 
     const handleSignIn = async (e: React.MouseEvent<HTMLElement>) => {
+        const emailInput = (document.getElementById("email") as HTMLInputElement);
+        if (!emailValidator.test(email)){
+            toast.error("Invalid Email")
+            return
+        }
         //Check if email is authorised 
         const q = query(collection(db, "Users"), where("email", "==", email));
         const querySnapshot = await getDocs(q);
@@ -44,13 +50,14 @@ const SignIn: NextPage = () => {
                 console.error(error.message)
             });
         }
-
-        (e.target as HTMLInputElement).value = ""
+        //Clear Input
+        setEmail("")   
+        emailInput.value = ""
     } 
 
     return (
         <div className='flex flex-col items-center content-center justify-center w-full h-screen p-12 text-4xl bg-sky-50'>
-            <input onChange={(e)=>setEmail(e.target.value)}id="email" type="email" placeholder='Email' 
+            <input id="email" onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder='Email' 
                 className='h-20 px-3 py-2 pl-8 mb-3 text-2xl text-gray-600 border rounded-full shadow outline-none appearance-none w-96 focus:outline-none focus:shadow- '
                 />
             <button onClick={handleSignIn} 

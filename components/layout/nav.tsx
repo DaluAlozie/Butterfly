@@ -3,10 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../../web_assets/web_assets/whitelogo.svg'
 import linkedinIcon from '../../web_assets/web_assets/linkedin-icon.png'
-import {useState, useEffect, useRef} from 'react' 
-import { auth } from '../../firebase/config'
-import { onAuthStateChanged, signOut } from 'firebase/auth'
-import toast from 'react-hot-toast';
+import { useContext, useEffect } from 'react' 
+import { loggedInContext } from '../signIn/loggedInContext'
+import { handleSignOut } from '../signOut/signOut'
 
 
 const Nav: NextPage = () => {
@@ -14,28 +13,13 @@ const Nav: NextPage = () => {
   let scrollY: number;
   const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white font-sans text-3xl my-1"
 
-  const [ loggedIn, setLoggedIn ] = useState<boolean>(false)
-
+  const loggedIn = useContext(loggedInContext);
 
   useEffect(()=>{
     
     //Scroll event listener to show and hide navbar
-    addScrollListner();
-    const user = auth.currentUser
-
-    setLoggedIn((user)? true : false)
-
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setLoggedIn(true)
-      } else {
-        setLoggedIn(false)
-      }
-    });
-    
-  
-    
-  },[])
+    addScrollListner();    
+  })
 
   const addScrollListner = () => {
     const nav = document.getElementById("nav");
@@ -58,14 +42,6 @@ const Nav: NextPage = () => {
       }
       scrollY = window.scrollY;
     })
-  }
-
-  const handleSignOut = () => {
-    signOut(auth).then(() => {
-      toast.success("Sign out Succsessful")
-    }).catch((error) => {
-      toast.error("Sign Unsuccsessful")
-    });
   }
 
   const collapse =() => {
@@ -139,7 +115,7 @@ const Nav: NextPage = () => {
               (
                 <button 
                 onClick={handleSignOut}
-                className="items-center justify-center h-12 mx-4 mb-3 font-sans text-3xl text-white min-w-max link-underline">
+                className="items-center justify-center h-16 mx-4 mb-3 font-sans text-3xl text-white min-w-max link-underline">
                   Sign Out
                 </button>
               )
