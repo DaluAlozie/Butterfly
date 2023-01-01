@@ -8,6 +8,8 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from 'next/router';
 import { loggedInContext } from '../components/signIn/loggedInContext';
 import { auth } from '../firebase/config';
+
+
 export default function MyApp({ Component, pageProps }: AppProps) {
 
   const [ loggedIn, setLoggedIn ] = useState<boolean>(false)
@@ -17,6 +19,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     
     //Scroll event listener to show and hide navbar
     const user = auth.currentUser
+    console.log(user);
 
     setLoggedIn((user)? true : false)
 
@@ -27,6 +30,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         setLoggedIn(false)
       }
     });  
+  
   },[])
 
   const router = useRouter()

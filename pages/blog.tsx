@@ -5,12 +5,7 @@ import { doc,collection, getDocs, query, DocumentData, orderBy} from "firebase/f
 import { db } from '../firebase/config';
 import { PostType } from '../components/blog/props';
 import Image from 'next/image';
-import ceo from '../web_assets/web_assets/ceo.png'
-import cfo from '../web_assets/web_assets/cfo.png'
-import cto from '../web_assets/web_assets/cto.png'
-import techLead1 from '../web_assets/web_assets/techLead1.png'
-import techLead2 from '../web_assets/web_assets/techLead2.png'
-
+import { allMembers, memberType } from '../components/blog/allMembers';
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -21,10 +16,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+
+
 //Classes
-const member = "h-max w-max mx-16 ml-24 flex flex-col justify-center my-10"
-const memberName = "text-center"
-const memberRole = "text-center text-gray-400"
+const memberClass = "h-max w-max mx-16 ml-24 flex flex-col justify-center my-10"
+const memberNameClass = "text-center text-2xl mt-2"
+const memberRoleClass = "text-center text-gray-400 text-2xl"
+
+
+
+
 
 
 const Blog: NextPage = () => {
@@ -61,7 +62,7 @@ const Blog: NextPage = () => {
       }
     </div>
     <div className='mb-5'>
-      <div className='w-full my-10 text-4xl text-center bold-italic'>Meet the Team</div>
+      <div className='w-full my-10 text-center title bold-italic'>Meet the Team</div>
       <div className='team-swiper'>
         <div  className='hidden w-full justify-evenly xl:flex'>   
           <Swiper
@@ -73,70 +74,27 @@ const Blog: NextPage = () => {
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
           >
-            <SwiperSlide>
-              <div className={member}>
+            
+          {
+            allMembers.map( (member: memberType) => 
+              <SwiperSlide key={member.name}>
+              <div className={memberClass}>
                 <Image
-                  src={ceo}
-                  alt="Picture of ceo"
-                  width={200}
-                  height={200}
+                  src={member.image}
+                  alt={"Picture of " + member.role}
+                  width={300}
                 />
-                <div className={memberName}>Josh Okusi</div>
-                <div className={memberRole}>CEO</div>
+                <div className={memberNameClass}>Josh Okusi</div>
+                <div className={memberRoleClass}>CEO</div>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
-              <div className={member}>
-                <Image
-                  src={cfo}
-                  alt="Picture of cfo"
-                  width={200}
-                  height={200}
-                />
-                <div className={memberName}>Alex Reid</div>
-                <div className={memberRole}>CFO</div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={member}>
-                <Image
-                  src={cto}
-                  alt="Picture of the cto"
-                  width={200}
-                  height={200}
-                />
-                <div className={memberName}>Zain Mobarik</div>
-                <div className={memberRole}>CTO</div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={member}>
-                <Image
-                  src={techLead1}
-                  alt="Picture of the tech lead"
-                  width={200}
-                  height={200}
-                />
-                <div className={memberName}>Jessica Daniels</div>
-                <div className={memberRole}>Tech Lead</div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={member}>
-                <Image
-                  src={techLead2}
-                  alt="Picture of the tech lead"
-                  width={200}
-                  height={200}
-                />
-                <div className={memberName}>Neil Shaabi</div>
-                <div className={memberRole}>Tech Lead</div>
-              </div>
-            </SwiperSlide>
+            )
+          }
+
           </Swiper>
         </div>
       </div>
-      <div  className='flex justify-evenly w-96 xl:hidden'>   
+      <div  className='flex justify-evenly team-swiper-collapsed xl:hidden'>   
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -147,66 +105,22 @@ const Blog: NextPage = () => {
           scrollbar={{ draggable: true }}
           
         >
-          <SwiperSlide>
-            <div className={member}>
-              <Image
-                src={ceo}
-                alt="Picture of ceo"
-                width={200}
-                height={200}
-              />
-              <div className={memberName}>Josh Okusi</div>
-              <div className={memberRole}>CEO</div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={member}>
-              <Image
-                src={cfo}
-                alt="Picture of cfo"
-                width={200}
-                height={200}
-              />
-              <div className={memberName}>Alex Reid</div>
-              <div className={memberRole}>CFO</div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={member}>
-              <Image
-                src={cto}
-                alt="Picture of the cto"
-                width={200}
-                height={200}
-              />
-              <div className={memberName}>Zain Mobarik</div>
-              <div className={memberRole}>CTO</div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-              <div className={member}>
+          {
+            allMembers.map( (member: memberType) => 
+              <SwiperSlide key={member.name}>
+              <div className={memberClass}>
                 <Image
-                  src={techLead1}
-                  alt="Picture of the tech lead"
-                  width={200}
-                  height={200}
+                  src={member.image}
+                  alt={"Picture of " + member.role}
+                  width={300}
                 />
-                <div className={memberName}>Jessica Daniels</div>
-                <div className={memberRole}>Tech Lead</div>
+                <div className={memberNameClass}>Josh Okusi</div>
+                <div className={memberRoleClass}>CEO</div>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
-              <div className={member}>
-                <Image
-                  src={techLead2}
-                  alt="Picture of the tech lead"
-                  width={200}
-                  height={200}
-                />
-                <div className={memberName}>Neil Shaabi</div>
-                <div className={memberRole}>Tech Lead</div>
-              </div>
-            </SwiperSlide>
+            )
+          }
+
         </Swiper>
       </div>
     </div>

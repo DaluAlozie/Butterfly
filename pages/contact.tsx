@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import linkedinIcon from '../web_assets/web_assets/linkedin-blue-icon.svg'
-import insta from '../web_assets/web_assets/Insta-logo.svg'
-import socialMedia from '../web_assets/web_assets/social-media.svg'
-import email from '../web_assets/web_assets/email.svg'
-import campus from '../web_assets/web_assets/campus.svg'
+import linkedinIcon from '../web_assets/web_assets/Contact/linkedin-blue-icon.svg'
+import insta from '../web_assets/web_assets/Contact/Insta-logo.svg'
+import socialMedia from '../web_assets/web_assets/Contact/social-media.svg'
+import email from '../web_assets/web_assets/Contact/email.svg'
+import campus from '../web_assets/web_assets/Contact/campus.svg'
 
 const Contact: NextPage = () => {
   const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-24 w-40 h-max"

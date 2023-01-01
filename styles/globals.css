@@ -67,6 +67,18 @@ nav{
 }
 }
 
+@media (max-width: 900px){
+    #nav.collapse-show-more{
+        height: 480px;
+        transition: height 0.25s ease-in-out;
+        -webkit-transition: height 0.25s ease-in-out;
+        -moz-transition: height 0.25s ease-in-out;
+        -ms-transition: height 0.25s ease-in-out;
+        -o-transition: height 0.25s ease-in-out;
+}
+}
+
+
 
 /* hide nav on scroll */
 #nav.scroll-hide{
@@ -89,8 +101,12 @@ nav{
     white-space: nowrap;
 }
 
+.title{
+    font-size: 80px;    
+}
+
 .join-button{
-    right: calc(50% - 60px);
+    right: calc(50% - 80px);
 }
 
 .bg-home{
@@ -101,22 +117,19 @@ nav{
 /* Contact background */
 .contact-us-banner{
 
-    background-image: url('../web_assets/web_assets/contact-us.jpg');
+    background-image: url('../web_assets/web_assets/Contact/contact-us.jpg');
     background-size: cover;
     background-position: center;
     height: 70vh;
 }
-/* Blog background */
-.team-banner{
-    background-image: url('../web_assets/web_assets/team.png');
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-}
 
 /* Swiper */
 .team-swiper{
-    max-width: 1330px;
+    max-width: 1500px;
+}
+
+.team-swiper-collapsed{
+    width: 500px;
 }
 
 
@@ -151,8 +164,62 @@ nav{
 }
 
 
+@font-face {
+    font-family: 'sans-bold';
+    src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-Bold.ttf');
+}
+.sans-bold{
+    font-family: "sans-bold";
+}
+
+
+@font-face {
+    font-family: 'sans-italic';
+    src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-Italic.ttf');
+}
+.sans-italic{
+    font-family: "sans-italic";
+}
+
 /* About page */
 
 .bg-about{
     background: linear-gradient(140deg, rgb(240 249 255) 70%,#6FBCFF 10% 20%,#FFBBF4 );
 }
+ .bg-about-2{
+    background-color: #68b7fc;
+ }
+
+ .about-image{
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    padding: 15px;
+    background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
+}
+
+.about-image-title{
+    font-size: 40px;    
+    background: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
+    background-clip: text;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-download{
+    font-size: 80px;
+}
+
+.section-swiper{
+    width: 450px;
+}
+
+@media (min-width: 1280px) {
+    .about-download {
+        font-size: 120px;
+    }
+}
+

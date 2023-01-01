@@ -3,7 +3,7 @@ import { sendSignInLinkToEmail, onAuthStateChanged  } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore"; 
 import { db, auth }  from '../firebase/config';
 import { actionCodeSettings } from '../components/signIn/codeSettings';
-import { useState,useEffect } from 'react';
+import { useState,useEffect, useRef } from 'react';
 
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/router';
@@ -12,6 +12,8 @@ const emailValidator = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$
 const SignIn: NextPage = () => {
     const [email, setEmail] = useState<string>("")
     const router = useRouter()
+
+    const emailInputRef = useRef<HTMLInputElement>(null!)
     
     useEffect(() => {
         const user = auth.currentUser;
@@ -24,7 +26,6 @@ const SignIn: NextPage = () => {
     })
 
     const handleSignIn = async (e: React.MouseEvent<HTMLElement>) => {
-        const emailInput = (document.getElementById("email") as HTMLInputElement);
         if (!emailValidator.test(email)){
             toast.error("Invalid Email")
             return
@@ -52,12 +53,12 @@ const SignIn: NextPage = () => {
         }
         //Clear Input
         setEmail("")   
-        emailInput.value = ""
+        emailInputRef.current.value = ""
     } 
 
     return (
         <div className='flex flex-col items-center content-center justify-center w-full h-screen p-12 text-4xl bg-sky-50'>
-            <input id="email" onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder='Email' 
+            <input ref={emailInputRef} id="email" onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder='Email' 
                 className='h-20 px-3 py-2 pl-8 mb-3 text-2xl text-gray-600 border rounded-full shadow outline-none appearance-none w-96 focus:outline-none focus:shadow- '
                 />
             <button onClick={handleSignIn} 

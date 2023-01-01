@@ -54,14 +54,16 @@ const Home: NextPage = () => {
         {/* main content */}
         <div className='relative min-h-screen min-w-screen bg-inherit'>
           <div> 
-              <a type='button' className='absolute justify-center w-32 py-2 text-center text-white join-button md:bottom-5 md:fixed md:inline-flex md:right-5 h-11 bg-home rounded-3xl' href="https://apps.apple.com/gb/app/butterfly/id1640868808">
-                <b>Join Today</b>
+              <a type='button' 
+              className='absolute justify-center h-16 pt-4 text-xl text-center text-white rounded-full w-44 join-button md:bottom-5 md:fixed md:inline-flex md:right-5 bg-home' 
+              href="https://apps.apple.com/gb/app/butterfly/id1640868808"
+              target="_blank" rel="noopener noreferrer">
+                <b>Download Now</b>
               </a>
           </div>
         </div>
       </div>
     </div>
-
   )
 }
 

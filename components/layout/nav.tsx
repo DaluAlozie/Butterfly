@@ -3,13 +3,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../../web_assets/web_assets/whitelogo.svg'
 import linkedinIcon from '../../web_assets/web_assets/linkedin-icon.png'
-import { useContext, useEffect } from 'react' 
+import { useContext, useEffect, useRef } from 'react' 
 import { loggedInContext } from '../signIn/loggedInContext'
 import { handleSignOut } from '../signOut/signOut'
 
 
 const Nav: NextPage = () => {
 
+  const navRef = useRef<HTMLElement>(null!)
   let scrollY: number;
   const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white font-sans text-3xl my-1"
 
@@ -22,8 +23,7 @@ const Nav: NextPage = () => {
   })
 
   const addScrollListner = () => {
-    const nav = document.getElementById("nav");
-
+    const nav = navRef.current
     scrollY = window.scrollY;
     const navHeight: number = nav!.clientHeight/2;
 
@@ -45,17 +45,17 @@ const Nav: NextPage = () => {
   }
 
   const collapse =() => {
-    const nav = document.getElementById("nav");
-
+    const nav = navRef.current
+  
     //Removing scroll events as it interferes with collapse
-    nav?.classList.remove("scroll-show");
-    nav?.classList.remove("scroll-hide");
+    nav.classList.remove("scroll-show");
+    nav.classList.remove("scroll-hide");
 
-    nav!.classList.toggle("collapse-hide");
-    nav!.classList.toggle("collapse-show");
+    nav.classList.toggle("collapse-hide");
+    nav.classList.toggle(loggedIn ? "collapse-show-more" : "collapse-show");
   }
   return (
-    <nav id="nav" className='sticky top-0 flex flex-wrap items-center justify-center w-full px-5 overflow-hidden bg-fixed zIndex-50 bg-custom-nav collapse-hide min-h-36'>
+    <nav id="nav" ref={navRef} className='sticky top-0 flex flex-wrap items-center justify-center w-full px-5 overflow-hidden bg-fixed zIndex-50 bg-custom-nav collapse-hide min-h-36'>
       
         <Link href='/'>
         {/* This height deterines height of nav */}
