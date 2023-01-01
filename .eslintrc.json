@@ -16,8 +16,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "@typescript-eslint"
+        "react"
     ],
     "rules": {
         // suppress errors for missing 'import React' in files

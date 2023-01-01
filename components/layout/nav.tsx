@@ -28,8 +28,8 @@ const Nav: NextPage = () => {
     const navHeight: number = nav!.clientHeight/2;
 
     window.addEventListener("scroll",()=>{
-      let currentScroll: number = window.scrollY; 
-      let diff: number = currentScroll - scrollY;
+      const currentScroll: number = window.scrollY; 
+      const diff: number = currentScroll - scrollY;
 
       if (diff < 0 && currentScroll >= 0){
         nav?.classList.remove("scroll-hide");
