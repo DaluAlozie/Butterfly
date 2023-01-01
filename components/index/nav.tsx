@@ -12,22 +12,22 @@ const HomeNav: NextPage = () => {
         <nav className='flex flex-wrap items-start justify-center w-full px-5 py-4 pt-5 bg-fixed collapse-hide'>
             <div  className='justify-around w-full ml-8 lg:inline-flex lg:flex-grow lg:w-auto'>
                 <div id="navbar" className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
-                    <Link href='/'>
+                    <Link passHref={true} href='/'>
                     <div className={NavLink}>
                         Home
                     </div>
                     </Link>
-                    <Link href='/blog'>
+                    <Link passHref={true} href='/blog'>
                     <div className={NavLink}>
                         Blog
                     </div>
                     </Link>
-                    <Link href='/about'>
+                    <Link passHref={true} href='/about'>
                     <div className={NavLink}>
                         About
                     </div>
                     </Link>
-                    <Link href='/contact'>
+                    <Link passHref={true} href='/contact'>
                     <div className={NavLink}>
                         Contact
                     </div>

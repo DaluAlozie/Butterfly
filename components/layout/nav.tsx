@@ -57,7 +57,7 @@ const Nav: NextPage = () => {
   return (
     <nav id="nav" ref={navRef} className='sticky top-0 flex flex-wrap items-center justify-center w-full px-5 overflow-hidden bg-fixed zIndex-50 bg-custom-nav collapse-hide min-h-36'>
       
-        <Link href='/'>
+        <Link passHref={true} href='/'>
         {/* This height deterines height of nav */}
         <div className='inline-flex items-center h-32 px-2 py-2 mr-10'>
           <Image src={logo}
@@ -91,22 +91,22 @@ const Nav: NextPage = () => {
         </button>
         <div id="navbar" className='items-center justify-end w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
           <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
-            <Link href='/'>
+            <Link passHref={true} href='/'>
             <div className={NavLink}>
                 Home
             </div>
             </Link>
-            <Link href='/blog'>
+            <Link passHref={true} href='/blog'>
                 <div className={NavLink}>
                   Blog
                 </div>
             </Link>
-            <Link href='/about'>
+            <Link passHref={true}  href='/about'>
                 <div className={NavLink}>
                   About
                 </div>
             </Link>
-            <Link href='/contact'>
+            <Link passHref={true} href='/contact'>
                 <div className={NavLink}>
                     Contact
                 </div>
