@@ -8,7 +8,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from 'next/router';
 import { UserContext } from '../components/user/UserContext';
 import { auth } from '../firebase/config';
-import Head from 'next/head';
 
 type UserType = {
   firstName: string,
