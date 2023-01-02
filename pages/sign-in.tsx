@@ -31,12 +31,23 @@ const SignIn: NextPage = () => {
             return
         }
         //Check if email is authorised 
-        const q = query(collection(db, "Users"), where("email", "==", email));
-        const querySnapshot = await getDocs(q);
-        
-        if (querySnapshot.empty) {
-            toast.error("Email not authorised")
+        const user = await fetch("/api/getUser", {
+            method: "POST",
+            headers: new Headers({ "Content-Type": "application/json" }),
+            credentials: "same-origin",
+            body: JSON.stringify({ email: email }),
+          })
+          .then((res) => res.json())
+          .catch((e)=>{ 
+            toast.error("Something went Wrong")
+            return 
+          })
+          
+        if (!user){
+            toast.error("Unauthorised")
+            return
         }
+        
         else{
             sendSignInLinkToEmail(auth, email, actionCodeSettings)
                 .then(() => {

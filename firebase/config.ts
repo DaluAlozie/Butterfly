@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApp, getApps } from "firebase/app";
 import { getFirestore} from "firebase/firestore"; 
 import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -15,11 +15,13 @@ const firebaseConfig = {
   messagingSenderId: "154975974291",
   appId: "1:154975974291:web:7177f19a2fd1c02b622e66",
   measurementId: "G-KMJLGRQJLN"
+
 };
 
 // Initialize Firebase
 
-const app = initializeApp(firebaseConfig);
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+
 const db = getFirestore(app);
 const auth = getAuth(app);
 

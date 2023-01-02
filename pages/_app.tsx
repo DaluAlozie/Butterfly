@@ -6,33 +6,44 @@ import Footer from '../components/layout/footer';
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from 'next/router';
-import { loggedInContext } from '../components/signIn/loggedInContext';
+import { UserContext } from '../components/user/UserContext';
 import { auth } from '../firebase/config';
 import Head from 'next/head';
 
+type UserType = {
+  firstName: string,
+  surname: string,
+  email: string
+}
 export default function MyApp({ Component, pageProps }: AppProps) {
 
-  const [ loggedIn, setLoggedIn ] = useState<boolean>(false)
+  const [ user, setUser ] = useState<UserType | null >(null)
 
 
   useEffect(()=>{
     
     //Scroll event listener to show and hide navbar
-    const user = auth.currentUser
-    console.log(user);
 
-    setLoggedIn((user)? true : false)
-
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {      
       if (user) {
-        setLoggedIn(true)
+        const res = await fetch("/api/getUser", {
+          method: "POST",
+          headers: new Headers({ "Content-Type": "application/json" }),
+          credentials: "same-origin",
+          body: JSON.stringify({ email:"dalualozie1@gmail.com" }),
+        })
+        .then((res) => res.json())
+        .catch((e)=>{ setUser(null)})
+
+        setUser(res)
+        
       } else {
-        setLoggedIn(false)
+        setUser(null)
       }
     });  
   
   },[])
-
+  
   const router = useRouter()
 
   return(
@@ -40,7 +51,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
-      <loggedInContext.Provider value={loggedIn}>
+      <UserContext.Provider value={user}>
         {
           (
             router.route !== "/") && (
@@ -53,7 +64,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
      
         <Footer></Footer>
          
-      </loggedInContext.Provider>
+      </UserContext.Provider>
     </div>
   ) 
 }

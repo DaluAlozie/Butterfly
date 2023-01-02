@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
-import { loggedInContext } from '../signIn/loggedInContext'
+import { UserContext } from '../user/UserContext'
 import { useContext } from 'react'
 import { handleSignOut } from '../signOut/signOut'
 
 const HomeNav: NextPage = () => {
-    const loggedIn = useContext(loggedInContext)
+    const user = useContext(UserContext)
     const NavLink = "h-14 items-center justify-center min-w-max mx-4 link-underline link-underline-black text-black mt-2 sans-regular text-4xl"
 
     return (
@@ -32,7 +32,7 @@ const HomeNav: NextPage = () => {
                         Contact
                     </div>
                     </Link> 
-                    { loggedIn && 
+                    { user && 
                         (
                             <button 
                                 onClick={handleSignOut}

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import logo from '../../web_assets/web_assets/whitelogo.svg'
 import linkedinIcon from '../../web_assets/web_assets/linkedin-icon.png'
 import { useContext, useEffect, useRef } from 'react' 
-import { loggedInContext } from '../signIn/loggedInContext'
+import { UserContext } from '../user/UserContext'
 import { handleSignOut } from '../signOut/signOut'
 
 
@@ -14,7 +14,7 @@ const Nav: NextPage = () => {
   let scrollY: number;
   const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white sans-regular text-3xl my-1"
 
-  const loggedIn = useContext(loggedInContext);
+  const user = useContext(UserContext);
 
   useEffect(()=>{
     
@@ -71,11 +71,10 @@ const Nav: NextPage = () => {
     nav.classList.remove("scroll-hide");
 
     nav.classList.toggle("collapse-hide");
-    nav.classList.toggle(loggedIn ? "collapse-show-more" : "collapse-show");
+    nav.classList.toggle(user ? "collapse-show-more" : "collapse-show");
   }
   return (
     <nav id="nav" ref={navRef} className='sticky top-0 flex flex-wrap items-center justify-center w-full px-5 overflow-hidden bg-fixed zIndex-50 bg-custom-nav collapse-hide min-h-36'>
-      
         <Link passHref={true} href='/'>
         {/* This height deterines height of nav */}
         <div className='inline-flex items-center h-32 px-2 py-2 mr-10'>
@@ -130,11 +129,11 @@ const Nav: NextPage = () => {
                     Contact
                 </div>
             </Link>{
-              loggedIn && 
+              user && 
               (
                 <button 
                 onClick={handleSignOut}
-                className="items-center justify-center h-16 mx-4 mb-3 font-sans text-3xl text-white min-w-max link-underline">
+                className="items-center justify-center h-16 mx-4 mb-4 font-sans text-3xl text-white min-w-max link-underline">
                   Sign Out
                 </button>
               )
