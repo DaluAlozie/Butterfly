@@ -3,11 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background:rgb(240 249 255);
-    width: 100vw;
-    height: 100vh;
+body {
+    margin:0px;
+    width:100vw;
+    height:100vh;
+    overflow:auto;
 }
+
 /* Nav link styles */
 nav{
     z-index: 100;

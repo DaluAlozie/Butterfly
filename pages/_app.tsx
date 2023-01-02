@@ -8,7 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from 'next/router';
 import { loggedInContext } from '../components/signIn/loggedInContext';
 import { auth } from '../firebase/config';
-
+import Head from 'next/head';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 
@@ -37,6 +37,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return(
     <div className='flex flex-col justify-between w-screen min-h-screen bg-white h-max min-w-max'>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      </Head>
       <loggedInContext.Provider value={loggedIn}>
         {
           (
