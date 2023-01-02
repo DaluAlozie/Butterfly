@@ -7,9 +7,9 @@ import HomeNav from '../components/index/nav'
 const Home: NextPage = () => {
 
   return (
-    <div className='flex flex-row flex-wrap-reverse w-screen h-max min-w-min'>
+    <div className='flex flex-row flex-wrap-reverse w-screen min-h-screen h-max min-w-min'>
       {/* Left side */}
-      <div className='flex-col w-full h-full p-5 min-h-max bg-home xl:flex xl:w-1/2'>
+      <div className='flex-col w-full min-h-screen p-5 h-max bg-home xl:flex xl:w-1/2'>
         <nav className='flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 min-w-fit'>
           <div className='flex-wrap justify-between w-full ml-5 lg:inline-flex lg:flex-grow lg:w-auto'>
             <div className='flex flex-row flex-wrap justify-between w-full mr-12 '> 
@@ -41,18 +41,17 @@ const Home: NextPage = () => {
           </div>
         </nav>
         {/* main content */}
-        <div className='flex flex-col items-center min-h-screen py-28 min-w-screen bg-inherit'>
-          <div className='italic home-message mr-72'><i>“ Spread your </i></div>
-          <div className='ml-12 home-message'> <i>social wings ”</i></div>
+        <div className='flex flex-col items-center py-28 min-w-screen bg-inherit'>
+          <div className='mr-64 italic home-message'><i>“ Spread your </i></div>
+          <div className='ml-52 home-message'> <i>social wings ”</i></div>
         </div>
       </div>
 
       {/* Right side */}
-      <div className='flex-col w-full h-full mb-10 xl:flex xl:w-1/2 min-h-max bg-sky-50'>
+      <div className='flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2'>
         <HomeNav/>
-
         {/* main content */}
-        <div className='relative min-h-screen min-w-screen bg-inherit'>
+        <div className='relative min-w-screen bg-inherit'>
           <div> 
               <a type='button' 
               className='absolute justify-center h-16 pt-4 text-xl text-center text-white rounded-full w-44 join-button md:bottom-5 md:fixed md:inline-flex md:right-5 bg-home' 

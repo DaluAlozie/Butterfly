@@ -17,28 +17,20 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 
-
 //Classes
 const memberClass = "h-max w-max mx-16 ml-24 flex flex-col justify-center my-10"
 const memberNameClass = "text-center text-2xl mt-2"
 const memberRoleClass = "text-center text-gray-400 text-2xl"
 
 
-
-
-
-
 const Blog: NextPage = () => {
 
   const [posts,setPosts] = useState<DocumentData>([])
   
-
-
   //Gets posts when page loads 
   useEffect(() => {
     getPosts();
   },[])
-  
   
 
   //Fetches posts from server
@@ -48,8 +40,7 @@ const Blog: NextPage = () => {
     // const res = await getDocs(q);
     // const docs = res.docs.map((doc) => doc.data()).reverse();
     // console.log(docs)
-    // setPosts(docs)   
-         
+    // setPosts(docs)       
   }
 
   return (
@@ -61,7 +52,8 @@ const Blog: NextPage = () => {
           props={post}/>)
       }
     </div>
-    <div className='mb-5'>
+
+    <div className='mb-36'>
       <div className='w-full my-10 text-center title bold-italic'>Meet the Team</div>
       <div className='team-swiper'>
         <div  className='hidden w-full justify-evenly xl:flex'>   

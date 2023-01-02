@@ -41,9 +41,7 @@ const PointSwiper: NextPage = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        initialSlide={3}
-        className="section-swiper ml-24 mr-10 p-36"
-
+        className="ml-24 mr-10 section-swiper p-36"
         >
           {
             allSections.map((section: sectionType) => 

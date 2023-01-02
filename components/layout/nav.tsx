@@ -31,15 +31,32 @@ const Nav: NextPage = () => {
       const currentScroll: number = window.scrollY; 
       const diff: number = currentScroll - scrollY;
 
-      if (diff < 0 && currentScroll >= 0){
-        nav?.classList.remove("scroll-hide");
-        nav?.classList.add("scroll-show");
+      if (diff < 0){ // Going up the page
+
+        //Checks if the scroll is fast enough
+        const minScroll = scrollY - 30
+        setTimeout(()=>{
+          
+          if (window.scrollY < minScroll || window.scrollY <= 0){
+            nav?.classList.remove("scroll-hide");
+            nav?.classList.add("scroll-show");
+          }
+        },100)
       } 
       
-      else if(diff > 0 && currentScroll > navHeight && !((window.innerHeight + window.scrollY) >= document.body.scrollHeight)){
-        nav?.classList.remove("scroll-show");
-        nav?.classList.add("scroll-hide");
+      else if(diff > 0 && currentScroll > navHeight){ // Going down the page
+
+        //Checks if the scroll is fast enough
+        const minScroll = scrollY + 15
+        setTimeout(()=>{
+          
+          if (window.scrollY > minScroll){
+            nav?.classList.remove("scroll-show");
+            nav?.classList.add("scroll-hide");
+          }
+        },100)
       }
+      
       scrollY = window.scrollY;
     })
   }
@@ -89,7 +106,7 @@ const Nav: NextPage = () => {
             />
         </svg>
         </button>
-        <div id="navbar" className='items-center justify-end w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
+        <div className='items-center justify-end w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
           <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
             <Link passHref={true} href='/'>
             <div className={NavLink}>

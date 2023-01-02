@@ -78,8 +78,6 @@ nav{
 }
 }
 
-
-
 /* hide nav on scroll */
 #nav.scroll-hide{
     transform: scaleY(0);    
@@ -179,6 +177,17 @@ nav{
 }
 .sans-italic{
     font-family: "sans-italic";
+}
+
+
+/* Blog page */
+
+.message{
+    width: 900px;
+}
+
+li{
+    font-family: sans-regular;
 }
 
 /* About page */

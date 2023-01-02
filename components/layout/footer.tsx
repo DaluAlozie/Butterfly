@@ -8,7 +8,7 @@ const Footer: NextPage = () => {
   return(
     <footer className='flex flex-row justify-around w-full py-4 text-gray-400 bg-gray-200 min-h-max h-max'>
       {/* Left */}
-      <div className='flex flex-col items-start justify-between h-20 w-max'>
+      <div className='flex flex-col items-start justify-between h-14 w-max'>
         <a href="https://apps.apple.com/gb/app/butterfly-companion/id6444716123"
           target="_blank" rel="noopener noreferrer">
             Butterfly Companion
@@ -19,7 +19,7 @@ const Footer: NextPage = () => {
       </div>
     
       {/* Middle */}
-      <div className='flex flex-col items-start justify-between h-20 w-max'>
+      <div className='flex flex-col items-start justify-between h-14 w-max'>
           <a className=''
             href="https://apps.apple.com/gb/app/butterfly/id1640868808"
             target="_blank" rel="noopener noreferrer">
@@ -29,7 +29,7 @@ const Footer: NextPage = () => {
       </div>
 
       {/* Right */}
-      <div className='flex flex-col items-start justify-between h-20 w-max'>
+      <div className='flex flex-col items-start justify-between h-14 w-max'>
         <Link href='/sign-in'>
           Sign In
         </Link>

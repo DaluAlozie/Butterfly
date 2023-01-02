@@ -36,7 +36,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   return(
-    <div className='flex flex-col justify-between w-screen min-h-screen h-max bg-sky-50 min-w-max'>
+    <div className='flex flex-col justify-between w-screen min-h-screen bg-white h-max min-w-max'>
       <loggedInContext.Provider value={loggedIn}>
         {
           (
@@ -47,12 +47,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Main>
         <Component {...pageProps} />
         </Main>
-        {
-          (
-            router.route !== "/") && (
-            <Footer></Footer>
-          )
-        }
+     
+        <Footer></Footer>
+         
       </loggedInContext.Provider>
     </div>
   ) 
