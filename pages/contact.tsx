@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 import linkedinIcon from '../web_assets/web_assets/Contact/linkedin-blue-icon.svg'
 import insta from '../web_assets/web_assets/Contact/Insta-logo.svg'
@@ -10,6 +11,9 @@ const Contact: NextPage = () => {
   const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-24 w-40 h-max"
   return (
     <div className='w-full min-h-screen bg-white h-max min-w-max'>
+      <Head>
+        <title>Contact - Butterfly</title>
+      </Head>
       <div className='flex flex-col justify-between w-full h-max min-w-max min-h-max'>
         <div className='w-full py-24 contact-us-banner h-max'>
           <div className='text-center text-white bold-italic text-8xl'>

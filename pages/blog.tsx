@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import Post from '../components/blog/post'
 import { doc,collection, getDocs, query, DocumentData, orderBy} from "firebase/firestore"; 
@@ -45,6 +46,9 @@ const Blog: NextPage = () => {
 
   return (
   <div className='flex flex-col items-center justify-start w-full min-h-screen h-max'>
+      <Head>
+        <title>Blog - Butterfly</title>
+    </Head>
     <div className='w-full mb-4 h-72'>
       {
         posts.map((post: PostType) => 

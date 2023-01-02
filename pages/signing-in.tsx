@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head';
 import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 import toast from 'react-hot-toast';
 import { useEffect } from 'react';
@@ -49,6 +50,9 @@ const SigningIn: NextPage = () => {
     })
     return (
         <div className='w-full h-screen p-12 text-4xl'>
+            <Head>
+                <title>Signing in - Butterfly</title>
+            </Head>
             Signing in .......
         </div>
     )

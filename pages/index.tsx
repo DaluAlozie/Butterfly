@@ -3,11 +3,14 @@ import linkedinIcon from '../web_assets/web_assets/linkedin-icon.png'
 import Image from 'next/image'
 import logo from '../web_assets/web_assets/whitelogo.svg'
 import HomeNav from '../components/index/nav'
-
+import Head from 'next/head'
 const Home: NextPage = () => {
 
   return (
-    <div className='flex flex-row flex-wrap-reverse w-full min-h-screen h-max min-w-min'>
+    <div className='flex flex-row flex-wrap-reverse w-full min-h-screen h-max'>
+      <Head>
+        <title>About - Butterfly</title>
+      </Head>
       {/* Left side */}
       <div className='flex-col w-full min-h-screen p-5 h-max bg-home xl:flex xl:w-1/2'>
         <nav className='flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 min-w-fit'>

@@ -3,12 +3,16 @@ import type { NextPage } from 'next'
 import FriendsSwiper from '../components/about/friendsSwiper'
 import PostsSwiper from '../components/about/postsSwiper'
 import PointsSwiper from '../components/about/pointsSwiper'
+import Head from 'next/head'
 
 
 const About: NextPage = () => {
 
   return (
-  <div className='w-full min-h-screen p-12 text-4xl h-max'>
+  <div className='w-full min-h-screen p-12 text-4xl h-max min-w-max'>
+    <Head>
+      <title>About - Butterfly</title>
+    </Head>
     <div className='flex flex-col items-center justify-between w-full h-max rounded-3xl'>
   
       <div className='flex flex-col items-center justify-center mb-24 h-max xl:flex-row'>

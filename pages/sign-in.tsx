@@ -7,6 +7,7 @@ import { useState,useEffect, useRef } from 'react';
 
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const emailValidator = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
 const SignIn: NextPage = () => {
@@ -69,6 +70,9 @@ const SignIn: NextPage = () => {
 
     return (
         <div className='flex flex-col items-center content-center justify-center w-full h-screen p-12 text-4xl bg-sky-50'>
+            <Head>
+                <title>Sign in - Butterfly</title>
+            </Head>
             <input ref={emailInputRef} id="email" onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder='Email' 
                 className='h-20 px-3 py-2 pl-8 mb-3 text-2xl text-gray-600 border rounded-full shadow outline-none appearance-none w-96 focus:outline-none focus:shadow- '
                 />
