@@ -45,8 +45,8 @@ const Home: NextPage = () => {
         </nav>
         {/* main content */}
         <div className='flex flex-col items-center w-full px-16 py-28 bg-inherit'>
-          <div className='self-start text-white sans-light-italic home-message'><i>“ Spread your </i></div>
-          <div className='self-end text-white sans-light-italic home-message'> <i>social wings ”</i></div>
+          <div className='self-start text-white sans-light-italic '><i>“ Spread your </i></div>
+          <div className='self-end text-white sans-light-italic '> <i>social wings ”</i></div>
         </div>
       </div>
 
