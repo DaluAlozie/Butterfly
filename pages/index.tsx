@@ -41,7 +41,7 @@ const Home: NextPage = () => {
           </div>
         </nav>
         {/* main content */}
-        <div className='flex flex-col items-center py-28 min-w-screen bg-inherit'>
+        <div className='flex flex-col items-center w-full py-28 bg-inherit'>
           <div className='mr-64 italic home-message'><i>“ Spread your </i></div>
           <div className='ml-52 home-message'> <i>social wings ”</i></div>
         </div>
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
       <div className='flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2'>
         <HomeNav/>
         {/* main content */}
-        <div className='relative min-w-screen bg-inherit'>
+        <div className='relative w-full bg-inherit'>
           <div> 
               <a type='button' 
               className='absolute justify-center h-16 pt-4 text-xl text-center text-white rounded-full w-44 join-button md:bottom-5 md:fixed md:inline-flex md:right-5 bg-home' 

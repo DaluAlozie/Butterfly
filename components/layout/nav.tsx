@@ -31,7 +31,9 @@ const Nav: NextPage = () => {
       const currentScroll: number = window.scrollY; 
       const diff: number = currentScroll - scrollY;
 
-      if (diff < 0){ // Going up the page
+      // Going up the page 
+      if (diff < 0 &&  
+        (window.scrollY + window.innerHeight)<document.body.scrollHeight){ // if scrolled passed the bottom of page
 
         //Checks if the scroll is fast enough
         const minScroll = scrollY - 30
@@ -42,6 +44,9 @@ const Nav: NextPage = () => {
             nav?.classList.add("scroll-show");
           }
         },100)
+
+        console.log(window.scrollY + window.innerHeight, document.body.scrollHeight);
+        
       } 
       
       else if(diff > 0 && currentScroll > navHeight){ // Going down the page
