@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 const Home: NextPage = () => {
 
   return (
-    <div className='flex flex-row flex-wrap-reverse w-full min-h-screen h-max overflow-hidden'>
+    <div className='flex flex-row flex-wrap-reverse w-full min-h-screen overflow-hidden h-max'>
       <Head>
         <title>Home - Butterfly</title>
       </Head>
@@ -53,16 +53,16 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right side */}
-      <div id="temp" className='flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2 relative'>
-        <div className='absolute h-full w-full bg-home-right left-0 top-0'>
+      <div id="temp" className='relative flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2'>
+        <div className='absolute top-0 left-0 z-0 w-full h-full bg-home-right'>
 
         </div>
         <HomeNav/>
         {/* main content */}
-        <div className='relative w-full bg-inherit  '>
+        <div className='relative w-full bg-inherit '>
           <div> 
               <a type='button' 
-              className='absolute justify-center h-16 pt-4 text-xl text-center text-white rounded-full w-44 join-button md:bottom-5 md:fixed md:inline-flex md:right-5 bg-home' 
+              className='absolute justify-center h-16 pt-4 text-xl text-center text-white rounded-full w-44 home-download lg:bottom-5 lg:fixed lg:inline-flex lg:right-5 bg-home' 
               href="https://apps.apple.com/gb/app/butterfly/id1640868808"
               target="_blank" rel="noopener noreferrer">
                 <b>Download Now</b>
