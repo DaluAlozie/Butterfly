@@ -35,12 +35,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         .catch((e)=>{ setUser(null)})
 
         setUser(res)
-        
+
       } else {
         setUser(null)
       }
     });  
-  
   },[])
   
   const router = useRouter()

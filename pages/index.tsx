@@ -4,6 +4,8 @@ import Image from 'next/image'
 import logo from '../web_assets/web_assets/whitelogo.svg'
 import HomeNav from '../components/index/nav'
 import Head from 'next/head'
+import { useEffect } from 'react'
+
 const Home: NextPage = () => {
 
   return (
@@ -51,10 +53,13 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right side */}
-      <div className='flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2'>
+      <div id="temp" className='flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2 relative'>
+        <div className='absolute h-full w-full bg-home-right left-0 top-0'>
+
+        </div>
         <HomeNav/>
         {/* main content */}
-        <div className='relative w-full bg-inherit'>
+        <div className='relative w-full bg-inherit  '>
           <div> 
               <a type='button' 
               className='absolute justify-center h-16 pt-4 text-xl text-center text-white rounded-full w-44 join-button md:bottom-5 md:fixed md:inline-flex md:right-5 bg-home' 
