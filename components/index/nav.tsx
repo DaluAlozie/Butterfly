@@ -6,7 +6,7 @@ import { handleSignOut } from '../signOut/signOut'
 
 const HomeNav: NextPage = () => {
     const loggedIn = useContext(loggedInContext)
-    const NavLink = "h-14 items-center justify-center min-w-max mx-4 link-underline link-underline-black text-black mt-2 font-sans text-4xl"
+    const NavLink = "h-14 items-center justify-center min-w-max mx-4 link-underline link-underline-black text-black mt-2 sans-regular text-4xl"
 
     return (
         <nav className='flex flex-wrap items-start justify-center w-full px-5 py-4 pt-5 bg-fixed collapse-hide'>
@@ -36,7 +36,7 @@ const HomeNav: NextPage = () => {
                         (
                             <button 
                                 onClick={handleSignOut}
-                                className="h-20 items-center justify-center min-w-max mx-4 link-underline link-underline-black text-black mb-2 font-sans text-4xl">
+                                className="items-center justify-center h-20 mx-4 mb-2 font-sans text-4xl text-black min-w-max link-underline link-underline-black">
                                 Sign Out
                             </button>
                         )   

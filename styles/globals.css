@@ -93,8 +93,6 @@ nav{
 
 /* Home page */
 .home-message{
-    font-family: 'home-message-font';
-    color: white;
     font-size: 80px;    
     white-space: nowrap;
 }
@@ -142,6 +140,9 @@ nav{
 @font-face {
     font-family: 'home-message-font';
     src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-LightItalic.ttf');
+}
+.sans-light-italic{
+    font-family: 'home-message-font';
 }
 
 @font-face {

@@ -12,7 +12,7 @@ const Nav: NextPage = () => {
 
   const navRef = useRef<HTMLElement>(null!)
   let scrollY: number;
-  const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white font-sans text-3xl my-1"
+  const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white sans-regular text-3xl my-1"
 
   const loggedIn = useContext(loggedInContext);
 
@@ -43,10 +43,7 @@ const Nav: NextPage = () => {
             nav?.classList.remove("scroll-hide");
             nav?.classList.add("scroll-show");
           }
-        },100)
-
-        console.log(window.scrollY + window.innerHeight, document.body.scrollHeight);
-        
+        },100)        
       } 
       
       else if(diff > 0 && currentScroll > navHeight){ // Going down the page
