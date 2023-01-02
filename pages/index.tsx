@@ -7,7 +7,7 @@ import HomeNav from '../components/index/nav'
 const Home: NextPage = () => {
 
   return (
-    <div className='flex flex-row flex-wrap-reverse w-screen min-h-screen h-max min-w-min'>
+    <div className='flex flex-row flex-wrap-reverse w-full min-h-screen h-max min-w-min'>
       {/* Left side */}
       <div className='flex-col w-full min-h-screen p-5 h-max bg-home xl:flex xl:w-1/2'>
         <nav className='flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 min-w-fit'>
@@ -42,8 +42,8 @@ const Home: NextPage = () => {
         </nav>
         {/* main content */}
         <div className='flex flex-col items-center w-full py-28 bg-inherit'>
-          <div className='mr-64 italic home-message'><i>“ Spread your </i></div>
-          <div className='ml-52 home-message'> <i>social wings ”</i></div>
+          <div className='italic home-message'><i>“ Spread your </i></div>
+          <div className='home-message'> <i>social wings ”</i></div>
         </div>
       </div>
 
