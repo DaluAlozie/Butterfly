@@ -109,7 +109,7 @@ const Nav: NextPage = () => {
         </div>
         </button>
         <button onClick={collapse} 
-        className='absolute right-0 inline-flex p-3 mt-0 text-white rounded outline-none sm:mr-5 top-8 lg:hidden hover:text-white'>
+        className='absolute right-0 inline-flex p-3 mr-1 text-white rounded outline-none sm:mr-10 top-8 lg:hidden hover:text-white'>
         <svg
             className='w-6 h-6'
             fill='none'
