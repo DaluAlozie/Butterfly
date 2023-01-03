@@ -74,10 +74,10 @@ const SignIn: NextPage = () => {
                 <title>Sign in - Butterfly</title>
             </Head>
             <input ref={emailInputRef} id="email" onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder='Email' 
-                className='h-20 px-3 py-2 pl-8 mb-3 text-2xl text-gray-600 border rounded-full shadow outline-none appearance-none w-96 focus:outline-none focus:shadow- '
+                className='h-20 px-3 py-2 pl-8 mb-3 text-2xl w-72 text-gray-600 border rounded-full shadow outline-none appearance-none sm:w-96 focus:outline-none focus:shadow- '
                 />
             <button onClick={handleSignIn} 
-                className="h-16 px-5 text-2xl text-white rounded-full w-96 sans-regular bg-custom-nav">
+                className=" h-16 px-5 text-2xl text-white rounded-full w-72 sm:w-96 sans-regular bg-custom-nav">
                 Send Link
             </button>
         </div>       
