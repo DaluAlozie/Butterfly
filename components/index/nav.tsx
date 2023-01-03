@@ -10,8 +10,8 @@ const HomeNav: NextPage = () => {
 
     return (
         <nav className='z-50 flex flex-wrap items-start justify-center w-full px-5 py-4 pt-5 bg-fixed collapse-hide'>
-            <div  className='z-50 justify-around w-full ml-8 lg:inline-flex lg:flex-grow lg:w-auto'>
-                <div id="navbar" className='z-50 flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
+            <div  className='z-50 justify-around w-full ml-8 xl:inline-flex xl:flex-grow xl:w-auto'>
+                <div id="navbar" className='z-50 flex flex-col items-center mr-12 xl:inline-flex xl:flex-row xl:w-auto xl:items-center xl:h-auto'>
                     <Link passHref={true} href='/'>
                     <div className={NavLink}>
                         Home
