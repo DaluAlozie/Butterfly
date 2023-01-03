@@ -69,7 +69,7 @@ const SignIn: NextPage = () => {
     } 
 
     return (
-        <div className='flex flex-col items-center content-center justify-center w-full h-screen p-12 text-4xl bg-sky-50'>
+        <div className='flex flex-col items-center content-center justify-center w-full h-screen p-12 text-4xl'>
             <Head>
                 <title>Sign in - Butterfly</title>
             </Head>

@@ -64,11 +64,12 @@ const Blog: NextPage = () => {
           <Swiper
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
+            spaceBetween={20}
             slidesPerView={3}
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
+            className="mb-10"
           >
             
           {

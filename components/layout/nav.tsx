@@ -3,24 +3,35 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../../web_assets/web_assets/whitelogo.svg'
 import linkedinIcon from '../../web_assets/web_assets/linkedin-icon.png'
-import { useContext, useEffect, useRef } from 'react' 
+import { useContext, useEffect, useRef, useState } from 'react' 
 import { UserContext } from '../user/UserContext'
 import { handleSignOut } from '../signOut/signOut'
-
-
+import { useRouter } from 'next/router'
+import { RouterEvent } from 'next/router' 
+import Router from 'next/router'
 const Nav: NextPage = () => {
 
+  const [ isReady, setIsReady ] = useState<boolean>(false)
   const navRef = useRef<HTMLElement>(null!)
   let scrollY: number;
   const NavLink = "items-center justify-center h-12 min-w-max mx-4 link-underline text-white sans-regular text-3xl my-1"
 
   const user = useContext(UserContext);
+  const router = useRouter()
+
 
   useEffect(()=>{
     
     //Scroll event listener to show and hide navbar
-    addScrollListner();    
+    addScrollListner(); 
+    const nav = navRef.current
+    nav.classList.remove("scroll-hide");
+    nav.classList.add("scroll-show");   
   })
+
+  useEffect(()=>{
+    setIsReady(router.isReady)
+  },[router.isReady])
 
   const addScrollListner = () => {
     const nav = navRef.current
@@ -40,8 +51,8 @@ const Nav: NextPage = () => {
         setTimeout(()=>{
           
           if (window.scrollY < minScroll || window.scrollY <= 0){
-            nav?.classList.remove("scroll-hide");
-            nav?.classList.add("scroll-show");
+            nav.classList.remove("scroll-hide");
+            nav.classList.add("scroll-show");
           }
         },100)        
       } 
@@ -53,8 +64,8 @@ const Nav: NextPage = () => {
         setTimeout(()=>{
           
           if (window.scrollY > minScroll){
-            nav?.classList.remove("scroll-show");
-            nav?.classList.add("scroll-hide");
+            nav.classList.remove("scroll-show");
+            nav.classList.add("scroll-hide");
           }
         },100)
       }
@@ -73,9 +84,16 @@ const Nav: NextPage = () => {
     nav.classList.toggle("collapse-hide");
     nav.classList.toggle(user ? "collapse-show-more" : "collapse-show");
   }
+
+  const handleLink = (to: string) => {
+    if (isReady){
+      router.push(to)
+    }
+    router.isReady
+  }
   return (
     <nav id="nav" ref={navRef} className='sticky top-0 flex flex-wrap items-center justify-center w-full px-5 overflow-hidden bg-fixed zIndex-50 bg-custom-nav collapse-hide min-h-36'>
-        <Link passHref={true} href='/'>
+        <button  onClick={()=>{handleLink('/')}}>
         {/* This height deterines height of nav */}
         <div className='inline-flex items-center h-32 px-2 py-2 mr-10'>
           <Image src={logo}
@@ -89,7 +107,7 @@ const Nav: NextPage = () => {
           </div>
           <div className='mb-6 text-6xl text-white'>.</div>
         </div>
-        </Link>
+        </button>
         <button onClick={collapse} 
         className='absolute right-0 inline-flex p-3 mt-0 ml-10 mr-3 text-white rounded outline-none top-8 lg:hidden hover:text-white'>
         <svg
@@ -109,26 +127,26 @@ const Nav: NextPage = () => {
         </button>
         <div className='items-center justify-end w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
           <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
-            <Link passHref={true} href='/'>
+            <button  onClick={()=>{handleLink('/')}} aria-disabled={true}>
             <div className={NavLink}>
                 Home
             </div>
-            </Link>
-            <Link passHref={true} href='/blog'>
+            </button>
+            <button  onClick={()=>{handleLink('/blog')}}>
                 <div className={NavLink}>
                   Blog
                 </div>
-            </Link>
-            <Link passHref={true}  href='/about'>
+            </button>
+            <button   onClick={()=>{handleLink('/about')}}>
                 <div className={NavLink}>
                   About
                 </div>
-            </Link>
-            <Link passHref={true} href='/contact'>
+            </button>
+            <button  onClick={()=>{handleLink('/contact')}}>
                 <div className={NavLink}>
                     Contact
                 </div>
-            </Link>{
+            </button>{
               user && 
               (
                 <button 

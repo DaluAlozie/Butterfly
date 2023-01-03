@@ -40,6 +40,10 @@ nav{
     }
 }
 
+.disabled-link {
+    pointer-events: none;
+  }
+
 
 /*Butterfly text in header */
 .logo-text{
@@ -161,12 +165,13 @@ nav{
 
 /* Swiper */
 .team-swiper{
-    max-width: 1500px;
+    max-width: 1400px;
 }
 
 .team-swiper-collapsed{
     width: 500px;
 }
+
 
 
 
@@ -246,7 +251,7 @@ li{
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
-    padding: 15px;
+    padding: 10px;
     background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
 }
 
@@ -264,7 +269,7 @@ li{
 }
 
 .section-swiper{
-    width: 450px;
+    width: 440px;
 }
 
 @media (min-width: 1280px) {
