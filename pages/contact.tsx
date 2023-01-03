@@ -8,21 +8,21 @@ import email from '../web_assets/web_assets/Contact/email.svg'
 import campus from '../web_assets/web_assets/Contact/campus.svg'
 
 const Contact: NextPage = () => {
-  const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-24 w-40 h-max"
+  const cellClass = "flex flex-col justify-between min-h-max content-center text-center my-10 w-40 h-max"
   return (
-    <div className='w-full min-h-screen bg-white h-max min-w-max'>
+    <div className='w-full min-h-screen bg-white h-max'>
       <Head>
         <title>Contact - Butterfly</title>
       </Head>
       <div className='flex flex-col justify-between w-full h-max min-w-max min-h-max'>
         <div className='w-full py-24 contact-us-banner h-max'>
-          <div className='text-center text-white bold-italic text-8xl'>
+          <div className='text-5xl text-center text-white bold-italic sm:text-8xl'>
             Contact Us
           </div>
         </div>
 
       </div>
-      <div className='flex flex-row w-full h-max min-h-max justify-evenly'>
+      <div className='flex flex-col items-center w-full sm:flex-row h-max min-h-max justify-evenly'>
         <div className={cellClass}>
           <Image src={email}
                   height={120}

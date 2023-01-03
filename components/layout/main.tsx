@@ -9,7 +9,7 @@ type Props = {
 
 const Main: NextPage<Props> = ({ children } : Props) => {
   return (
-    <div className='w-full min-h-screen h-max min-w-max zIndex-40'>
+    <div className='w-full min-h-screen h-max zIndex-40'>
         <Toaster
             toastOptions={{
               duration: 3700,

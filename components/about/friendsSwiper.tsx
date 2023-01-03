@@ -7,7 +7,7 @@ import makeFriends from '../../web_assets/web_assets/About/makeFriends.png'
 
 import Image from 'next/image';
 
-import { sectionType, sectionClass,imageClass,sectionTitleClass, imageHeight } from './utils';
+import { sectionType, sectionClass,imageClass,sectionTitleClass, imageHeight, swiperClass } from './utils';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -36,7 +36,7 @@ const FriendsSwiper: NextPage = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        className="section-swiper"
+        className={swiperClass}
 
         >
           {

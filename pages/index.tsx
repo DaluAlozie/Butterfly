@@ -9,13 +9,13 @@ import { useEffect } from 'react'
 const Home: NextPage = () => {
 
   return (
-    <div className='flex flex-row flex-wrap-reverse w-full min-h-screen overflow-hidden h-max min-w-max'>
+    <div className='flex flex-row flex-wrap-reverse w-full min-h-screen overflow-hidden h-max'>
       <Head>
         <title>Home - Butterfly</title>
       </Head>
       {/* Left side */}
-      <div className='flex-col w-full h-full min-h-screen p-5 bg-home xl:flex xl:w-1/2'>
-        <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 overflow-hidden min-w-fit'>
+      <div className='flex-col w-full p-5 pb-24 h-max sm:min-h-screen bg-home xl:flex xl:w-1/2'>
+        <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 overflow-hidden min-w-fit home-left-nav'>
           <div className='flex-wrap justify-between w-full ml-5 xl:inline-flex xl:flex-grow xl:w-auto'>
             <div className='flex flex-row flex-wrap justify-between w-full mr-12 '> 
               <div>

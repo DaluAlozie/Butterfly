@@ -1,14 +1,12 @@
 import type { NextPage } from 'next'
-import Image from 'next/image'
-import linkedinIcon from '../../web_assets/web_assets/linkedin-icon.png'
-import insta from '../../web_assets/web_assets/Insta-logo.svg'
 import Link from 'next/link'
 
 const Footer: NextPage = () => {
+  const columnClass: string = "flex flex-col items-center justify-center sm:justify-between sm:items-start h-14 w-max"
   return(
-    <footer className='flex flex-row justify-around w-full py-4 text-gray-400 bg-gray-200 min-h-max h-max'>
+    <footer className='flex flex-col items-center justify-center w-full py-4 text-gray-400 bg-gray-200 sm:justify-around sm:flex-row min-h-max h-max'>
       {/* Left */}
-      <div className='flex flex-col items-start justify-between h-14 w-max'>
+      <div className={columnClass}>
         <a href="https://apps.apple.com/gb/app/butterfly-companion/id6444716123"
           target="_blank" rel="noopener noreferrer">
             Butterfly Companion
@@ -19,7 +17,7 @@ const Footer: NextPage = () => {
       </div>
     
       {/* Middle */}
-      <div className='flex flex-col items-start justify-between h-14 w-max'>
+      <div className={columnClass}>
           <a className=''
             href="https://apps.apple.com/gb/app/butterfly/id1640868808"
             target="_blank" rel="noopener noreferrer">
@@ -29,7 +27,7 @@ const Footer: NextPage = () => {
       </div>
 
       {/* Right */}
-      <div className='flex flex-col items-start justify-between h-14 w-max'>
+      <div className={columnClass}>
         <Link href='/sign-in'>
           Sign In
         </Link>

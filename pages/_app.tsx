@@ -45,7 +45,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   return(
-    <div className='flex flex-col justify-between w-screen min-h-screen bg-white h-max min-w-max'>
+    <div className='flex flex-col justify-between w-screen min-h-screen overflow-hidden bg-white h-max'>
 
       <UserContext.Provider value={user}>
         {

@@ -19,7 +19,7 @@ import 'swiper/css/scrollbar';
 
 
 //Classes
-const memberClass = "h-max w-max mx-16 ml-24 flex flex-col justify-center my-10"
+const memberClass = "h-max w-max flex flex-col justify-center"
 const memberNameClass = "text-center text-2xl mt-2"
 const memberRoleClass = "text-center text-gray-400 text-2xl"
 
@@ -58,9 +58,9 @@ const Blog: NextPage = () => {
     </div>
 
     <div className='mb-36'>
-      <div className='w-full my-10 text-center title bold-italic'>Meet the Team</div>
+      <div className='w-full my-10 text-4xl text-center sm:text-7xl bold-italic'>Meet the Team</div>
       <div className='team-swiper'>
-        <div  className='hidden w-full justify-evenly xl:flex'>   
+        <div  className='hidden w-full justify-evenly xl:flex h-max'>   
           <Swiper
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -69,25 +69,28 @@ const Blog: NextPage = () => {
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
-            className="mb-10"
+            className="mb-24"
           >
             
           {
             allMembers.map( (member: memberType) => 
               <SwiperSlide key={member.name}>
-              <div className={memberClass}>
-                <Image
-                  src={member.image}
-                  alt={"Picture of " + member.role}
-                  width={300}
-                />
+              <div className={memberClass + " mr-16 ml-24 mt-8"}>
+                <div>
+                  <Image
+                    src={member.image}
+                    alt={"Picture of " + member.role}
+                    width={300}
+                  />
+                </div>
+  
                 <div className={memberNameClass}>Josh Okusi</div>
                 <div className={memberRoleClass}>CEO</div>
               </div>
             </SwiperSlide>
             )
           }
-
+          <div className='h-10'></div>
           </Swiper>
         </div>
       </div>
@@ -100,24 +103,25 @@ const Blog: NextPage = () => {
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          
         >
           {
             allMembers.map( (member: memberType) => 
               <SwiperSlide key={member.name}>
-              <div className={memberClass}>
-                <Image
-                  src={member.image}
-                  alt={"Picture of " + member.role}
-                  width={300}
-                />
+              <div className={memberClass +" sm:ml-28 ml-16 mt-24"}>
+                <div className='member-image'>
+                  <Image
+                    src={member.image}
+                    alt={"Picture of " + member.role}
+                    width={300}
+                  />
+                </div>
                 <div className={memberNameClass}>Josh Okusi</div>
                 <div className={memberRoleClass}>CEO</div>
               </div>
             </SwiperSlide>
             )
           }
-
+        <div className='h-10'></div> 
         </Swiper>
       </div>
     </div>

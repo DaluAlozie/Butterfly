@@ -8,7 +8,7 @@ import friendPoints from '../../web_assets/web_assets/About/friendPoints.png'
 
 import Image from 'next/image';
 
-import { sectionType, sectionClass,imageClass,sectionTitleClass, imageHeight } from './utils';
+import { sectionType, sectionClass,imageClass,sectionTitleClass, imageHeight, swiperClass } from './utils';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -41,7 +41,7 @@ const PointSwiper: NextPage = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        className="ml-24 mr-10 section-swiper p-36"
+        className={ swiperClass+ " ml-24 mr-10 p-36"}
         >
           {
             allSections.map((section: sectionType) => 
