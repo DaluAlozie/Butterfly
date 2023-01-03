@@ -95,7 +95,7 @@ const Blog: NextPage = () => {
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
+          spaceBetween={10}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
