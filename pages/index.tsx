@@ -14,8 +14,8 @@ const Home: NextPage = () => {
         <title>Home - Butterfly</title>
       </Head>
       {/* Left side */}
-      <div className='flex-col w-full min-h-screen p-5 h-max bg-home xl:flex xl:w-1/2'>
-        <nav className='flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 min-w-fit'>
+      <div className='flex-col w-full h-full min-h-screen p-5 bg-home xl:flex xl:w-1/2'>
+        <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 overflow-hidden min-w-fit'>
           <div className='flex-wrap justify-between w-full ml-5 lg:inline-flex lg:flex-grow lg:w-auto'>
             <div className='flex flex-row flex-wrap justify-between w-full mr-12 '> 
               <div>
@@ -46,14 +46,14 @@ const Home: NextPage = () => {
           </div>
         </nav>
         {/* main content */}
-        <div className='flex flex-col items-center w-full px-16 py-28 bg-inherit'>
+        <div className='z-50 flex flex-col items-center justify-center w-full px-16 pt-20 bg-inherit'>
           <div className='text-white sans-light-italic home-message'><i>“ Spread your </i></div>
           <div className='text-white sans-light-italic home-message'> <i>social wings ”</i></div>
         </div>
       </div>
 
       {/* Right side */}
-      <div id="temp" className='relative flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2'>
+      <div className='relative flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2'>
         <div className='absolute top-0 left-0 z-0 w-full h-full bg-home-right'>
 
         </div>

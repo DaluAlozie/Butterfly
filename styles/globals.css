@@ -108,7 +108,7 @@ nav{
 
 /* Home page */
 .home-message{
-    font-size: 80px;    
+    font-size: 100px;    
     white-space: nowrap;
 }
 
@@ -118,7 +118,7 @@ nav{
     background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
-    opacity: 25%;
+    opacity: 30%;
 }
 
 .title{
