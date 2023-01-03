@@ -107,7 +107,7 @@ const Blog: NextPage = () => {
           {
             allMembers.map( (member: memberType) => 
               <SwiperSlide key={member.name}>
-              <div className={memberClass +" sm:ml-28 ml-16 mt-24"}>
+              <div className={memberClass +" sm:ml-28 ml-12 mt-24 md:ml-12"}>
                 <div className='member-image'>
                   <Image
                     src={member.image}
