@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 const Home: NextPage = () => {
 
   return (
-    <div className='flex flex-row flex-wrap-reverse w-full min-h-screen overflow-hidden h-max'>
+    <div className='flex flex-row flex-wrap-reverse w-screen min-h-screen overflow-hidden h-max min-w-full'>
       <Head>
         <title>Home - Butterfly</title>
       </Head>
