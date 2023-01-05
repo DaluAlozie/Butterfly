@@ -53,9 +53,9 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right side */}
-      <div className='relative flex-col w-full min-h-screen pt-8 h-max m xl:flex xl:w-1/2'>
+      <div className='relative flex-col w-full min-h-screen pt-8 h-max xl:flex xl:w-1/2'>
         <div className='absolute top-0 left-0 z-0 w-full h-full bg-home-right'>
-
+          
         </div>
         <HomeNav/>
         {/* main content */}

@@ -138,8 +138,10 @@ nav{
 }
 
 .home-download{
-    opacity: 100%;
+    border: 6px solid white;
     right: calc(50% - 160px);
+    line-height: 1rem;
+
 }
 
 @media (max-width: 1280px) {
@@ -230,7 +232,7 @@ nav{
 
 /* Swiper */
 .team-swiper{
-    max-width: 1400px;
+    max-width: 1350px;
 }
 
 .team-swiper-collapsed{

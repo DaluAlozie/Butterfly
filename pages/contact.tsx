@@ -16,7 +16,7 @@ const Contact: NextPage = () => {
       </Head>
       <div className='flex flex-col justify-between w-full h-max min-w-max min-h-max'>
         <div className='w-full py-24 contact-us-banner h-max'>
-          <div className='text-5xl text-center text-white bold-italic sm:text-8xl'>
+          <div className='text-6xl text-center text-white bold-italic sm:text-8xl'>
             Contact Us
           </div>
         </div>
@@ -33,7 +33,7 @@ const Contact: NextPage = () => {
           </Image>    
           <div className='mt-1 mb-2'>Email us at</div>
           <div>
-          admin@butterfly-social.com
+            admin@butterfly-social.com
           </div>
 
         </div>
