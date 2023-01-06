@@ -52,6 +52,15 @@ nav{
     font-size: 40px;
 }
 
+@media (max-width: 285px) {
+
+    .logo-text{
+        font-family: 'logo-font';
+        color: white;
+        font-size: 35px;
+    }
+}
+
 /* Nav Background */
 .bg-custom-nav{
     background-image: radial-gradient(circle at 40% 50%,#6FBCFF 40%, #6FBCFF 10%,#FFBBF4 70%, #FFBBF4 10%,#6FBCFF);
@@ -232,11 +241,13 @@ nav{
 
 /* Swiper */
 .team-swiper{
-    max-width: 1350px;
+    width: 1350px;
 }
 
 .team-swiper-collapsed{
-    width: 400px;
+    width: 380px;
+    max-width: 99%;
+
 }
 
 @media (max-width: 350px) {
@@ -252,6 +263,73 @@ nav{
 
 .message{
     width: 900px;
+}
+
+.blog-swiper{
+    width: 300px;
+}
+
+.post-closed{
+    height: 200px;
+    width: 200px;
+    margin-left: 17%;
+    padding: 25px;
+}
+
+.post-title{
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.post-content{
+    font-size: 15px;
+}
+
+.post-metadata{
+    font-size: 8px;
+}
+
+
+@media (min-width: 728px) {
+    .blog-swiper{
+        width: 700px;
+    }
+    .post-closed{
+        height: 500px;
+        width: 500px;
+        border-radius: 60px;
+        -webkit-border-radius: 60px;
+        -moz-border-radius: 60px;
+        -ms-border-radius: 60px;
+        -o-border-radius: 60px;
+}
+
+    .post-title{
+        font-size: 25px;
+    }
+
+    .post-metadata{
+        font-size: 20px;
+    }
+
+}
+
+
+
+
+@media (min-width: 450px) and ( max-width: 728px) {
+    .blog-swiper{
+        width: 80%;
+    }  
+    
+        
+    .post-metadata{
+        font-size: 10px;
+    }   
+    .post-closed{
+        height: 300px;
+        width: 300px;
+    }
 }
 
 /* About page */
@@ -297,7 +375,7 @@ nav{
         -o-border-radius: 30px;
     }
     .section-swiper {
-        width: 300px;
+        width: 280px;
     }
     .about-download{
         font-size: 40px;

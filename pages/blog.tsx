@@ -40,18 +40,32 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
       <Head>
         <title>Blog - Butterfly</title>
     </Head>
-    <div className='w-full mb-4 h-72'>
-      {/* {
-        posts.map((post: PostType) => 
-        <Post key={post.id} 
-          props={post}/>)
-      } */}
+    <div className='my-28 blog-swiper min-h-max'>
+    {/* <Swiper
+          // install Swiper modules
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={1}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        > 
+        {
+          posts.map((post: PostType) => 
+          <SwiperSlide key={post.id}>
+            <Post key={post.id} 
+              props={post}/>
+          </SwiperSlide>
+        )}
+        <div className='h-10'></div> 
+    </Swiper> */}
+  
     </div>
 
-    <div className='mb-36'>
+    <div className='mb-36 w-full flex flex-col items-center'>
       <div className='w-full my-10 text-4xl text-center sm:text-7xl bold-italic'>Meet the Team</div>
       <div className='team-swiper'>
-        <div  className='hidden w-full justify-evenly xl:flex h-max'>   
+        <div  className='hidden w-full team-swiper justify-evenly 2xl:flex h-max'>   
           <Swiper
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -75,8 +89,8 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
                   />
                 </div>
   
-                <div className={memberNameClass}>Josh Okusi</div>
-                <div className={memberRoleClass}>CEO</div>
+                <div className={memberNameClass}>{member.name }</div>
+                <div className={memberRoleClass}>{member.role }</div>
               </div>
             </SwiperSlide>
             )
@@ -85,7 +99,7 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
           </Swiper>
         </div>
       </div>
-      <div  className='flex justify-evenly team-swiper-collapsed xl:hidden'>   
+      <div  className='flex w-full justify-evenly team-swiper-collapsed 2xl:hidden'>   
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -98,7 +112,7 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
           {
             allMembers.map( (member: memberType, index) => 
               <SwiperSlide key={index}>
-              <div className={memberClass +" sm:ml-32 ml-16 mt-24 md:ml-16"}>
+              <div className={memberClass +" sm:ml-16 ml-12 mt-24 md:ml-16"}>
                 <div className='member-image'>
                   <Image
                     src={member.image}
@@ -106,8 +120,8 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
                     width={270}
                   />
                 </div>
-                <div className={memberNameClass}>Josh Okusi</div>
-                <div className={memberRoleClass}>CEO</div>
+                <div className={memberNameClass}>{member.name}</div>
+                <div className={memberRoleClass}>{member.role}</div>
               </div>
             </SwiperSlide>
             )
@@ -123,8 +137,8 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
 const getPosts = async () => {
   const q = query(collection(db, "Posts"),where("published", "==", true),orderBy("timeStamp","desc"));
   
-  const res = await getDocs(q);
-  const docs = res.docs.map((doc) => Object.assign(doc.data(), { id: doc.id }));
+  const querySnapshot = await getDocs(q);  
+  const docs = querySnapshot.docs.map((doc) => Object.assign(doc.data(), { id: doc.id }));
   return docs
 }
 

@@ -5,7 +5,7 @@ type sectionType = {
     image: StaticImageData
   }
 
-  const sectionClass: string = "h-max p-8 about-section  m-4"
+  const sectionClass: string = "h-max p-8 about-section  m-2"
   const imageClass: string = "about-image"
   const sectionTitleClass: string = "mb-5 text-center sans-italic about-image-title"
   const imageHeight: number = 700

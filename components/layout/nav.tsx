@@ -126,7 +126,7 @@ const Nav: NextPage = () => {
         </svg>
         </button>
         <div className='items-center justify-end w-full bg-inherit lg:inline-flex lg:flex-grow lg:w-auto min-h-max'>
-          <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
+          <div className='flex flex-col items-center mr-12 lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto w-full mt-2'>
             <button  onClick={()=>{handleLink('/')}} aria-disabled={true}>
             <div className={NavLink}>
                 Home
