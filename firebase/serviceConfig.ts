@@ -1,6 +1,6 @@
 import { initializeApp, cert, getApp} from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore'
-
+import { getAuth } from 'firebase-admin/auth';
 let app;
 try {
     app = getApp("service");
@@ -16,6 +16,6 @@ try {
         "service"
     );
 }
-
+const auth = getAuth(app)
 const authDB = getFirestore(app) 
-export { authDB } 
+export { authDB, auth } 

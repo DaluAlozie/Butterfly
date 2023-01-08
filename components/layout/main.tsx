@@ -3,11 +3,11 @@ import { AppProps } from 'next/app'
 import React, { FC } from "react"
 import { Toaster } from 'react-hot-toast';
 
-type Props = {
+type PageProps = {
     children: JSX.Element,
 };
 
-const Main: NextPage<Props> = ({ children } : Props) => {
+const Main: NextPage<PageProps> = ({ children } : PageProps) => {
   return (
     <div className='w-full min-h-screen h-max zIndex-40'>
         <Toaster

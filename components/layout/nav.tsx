@@ -143,16 +143,16 @@ const Nav: NextPage = () => {
                 </div>
             </button>
             <button  onClick={()=>{handleLink('/contact')}}>
-                <div className={NavLink}>
-                    Contact
-                </div>
+              <div className={NavLink}>
+                Contact
+              </div>    
             </button>{
               user && 
               (
-                <button 
-                onClick={handleSignOut}
-                className="items-center justify-center h-16 mx-4 mb-4 font-sans text-3xl text-white min-w-max link-underline">
-                  Sign Out
+                <button onClick={handleSignOut}>
+                  <div className={NavLink}>
+                    Sign Out                  
+                  </div>            
                 </button>
               )
             }

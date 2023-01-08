@@ -1,15 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { GetStaticProps, GetServerSidePropsContext,InferGetStaticPropsType } from 'next'
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { InferGetStaticPropsType } from 'next'
 import Post from '../components/blog/post'
-import { doc,collection, getDocs, query, DocumentData, orderBy, where} from "firebase/firestore"; 
-import { db } from '../firebase/config';
-import { PostType } from '../components/blog/props';
+import { getPosts, PostProps } from '../components/blog/utils'
 import Image from 'next/image';
 import { allMembers, memberType } from '../components/blog/allMembers';
-
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -18,21 +13,19 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { stringify } from '@firebase/util'
-
 
 //Classes
 const memberClass = "h-max w-max flex flex-col justify-center"
 const memberNameClass = "text-center text-2xl mt-2"
 const memberRoleClass = "text-center text-gray-400 text-2xl"
 
-type AppProps = {
+type PageProps = {
   allPosts: string
 }
 
-const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Blog: NextPage<PageProps> = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
-  const posts: PostType[] = (JSON.parse(allPosts)) as PostType[]
+  const posts: PostProps[] = (JSON.parse(allPosts)) as PostProps[]
   
   //Gets posts when page loads 
   return (
@@ -40,8 +33,8 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
       <Head>
         <title>Blog - Butterfly</title>
     </Head>
-    <div className='my-28 blog-swiper min-h-max'>
-    {/* <Swiper
+    <div className='flex flex-row my-28 blog-swiper min-h-max'>
+    <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={1}
@@ -51,18 +44,18 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
           scrollbar={{ draggable: true }}
         > 
         {
-          posts.map((post: PostType) => 
+          posts.map((post: PostProps) => 
           <SwiperSlide key={post.id}>
             <Post key={post.id} 
               props={post}/>
           </SwiperSlide>
         )}
         <div className='h-10'></div> 
-    </Swiper> */}
+    </Swiper>
   
     </div>
 
-    <div className='mb-36 w-full flex flex-col items-center'>
+    <div className='flex flex-col items-center w-full mb-36'>
       <div className='w-full my-10 text-4xl text-center sm:text-7xl bold-italic'>Meet the Team</div>
       <div className='team-swiper'>
         <div  className='hidden w-full team-swiper justify-evenly 2xl:flex h-max'>   
@@ -134,15 +127,7 @@ const Blog: NextPage<AppProps> = ({ allPosts }: InferGetStaticPropsType<typeof g
   )
 }
 
-const getPosts = async () => {
-  const q = query(collection(db, "Posts"),where("published", "==", true),orderBy("timeStamp","desc"));
-  
-  const querySnapshot = await getDocs(q);  
-  const docs = querySnapshot.docs.map((doc) => Object.assign(doc.data(), { id: doc.id }));
-  return docs
-}
-
-export async function getStaticProps(context: GetServerSidePropsContext) {
+export async function getStaticProps() {
 
   const allPosts = JSON.stringify(await getPosts())
   

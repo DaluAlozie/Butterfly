@@ -9,12 +9,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const query = authDB.collection("Users").where("email", "==", email)
   const querySnapshot = await query.get()
   if (querySnapshot.empty) {
-    console.log('No matching documents.');
     res.status(200).json(null)
     return 
   }  
 
   const { firstName, surname } = querySnapshot.docs[0].data()
   
-  res.status(200).json({ firstName: firstName, surname: surname, email: email })
+  res.status(200).json({ firstName: firstName, surname: surname, email: email, id: querySnapshot.docs[0].id })
 }

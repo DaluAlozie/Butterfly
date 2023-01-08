@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <title>Home - Butterfly</title>
       </Head>
       {/* Left side */}
-      <div className='flex-col w-full p-5 pb-24 h-max sm:min-h-screen bg-home xl:flex xl:w-1/2'>
+      <div className='flex-col w-full h-max sm:min-h-screen bg-home xl:flex xl:w-1/2'>
         <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 overflow-hidden min-w-fit home-left-nav'>
           <div className='flex-wrap justify-between w-full ml-5 xl:inline-flex xl:flex-grow xl:w-auto'>
             <div className='flex flex-row flex-wrap justify-between w-full mr-12 '> 
@@ -46,14 +46,14 @@ const Home: NextPage = () => {
           </div>
         </nav>
         {/* main content */}
-        <div className='z-50 flex flex-col items-center justify-center w-full px-16 pt-20 bg-inherit'>
-          <div className='text-white sans-light-italic home-message'><i>“ Spread your </i></div>
-          <div className='text-white sans-light-italic home-message'> <i>social wings ”</i></div>
+        <div className='z-50 flex flex-col items-center justify-center w-full px-16 bg-inherit h-max'>
+          <div className='text-white sans-light-italic home-message xl:mt-20'><i>“ Spread your </i></div>
+          <div className='mb-20 text-white sans-light-italic home-message'> <i>social wings ”</i></div>
         </div>
       </div>
 
       {/* Right side */}
-      <div className='relative flex-col w-full min-h-screen pt-8 h-max xl:flex xl:w-1/2'>
+      <div className='relative flex-col w-full min-h-screen h-max xl:flex xl:w-1/2'>
         <div className='absolute top-0 left-0 z-0 w-full h-full bg-home-right'>
           
         </div>

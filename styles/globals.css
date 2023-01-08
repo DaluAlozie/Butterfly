@@ -3,11 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+.body {
     margin:0px;
-    width:100vw;
-    height:100vh;
-    overflow:auto;
+
+    min-width: 280px;
 }
 
 /* Nav link styles */
@@ -32,7 +31,7 @@ nav{
 }
 
 
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
     .nav-link {
         font-size: 70px;
         height: 70px;
@@ -137,7 +136,7 @@ nav{
     background-image: url('../web_assets/web_assets/whitelogo.svg');
     background-size: 90% 90% ;
     background-position: center;
-    height: 100vh;
+    height: 100%;
     background-repeat: no-repeat;
     opacity: 30%;
 }
@@ -266,15 +265,30 @@ nav{
 }
 
 .blog-swiper{
-    width: 300px;
+    width: 280px;
 }
 
-.post-closed{
+.post-collapsed{
     height: 200px;
     width: 200px;
-    margin-left: 17%;
+    margin-left: 5%;
     padding: 25px;
 }
+
+.post-background{
+    background-image: url('../web_assets/web_assets/whitelogo.svg');
+    background-size: 90% 90% ;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 30%;
+    box-shadow: gray 2px 2px 2px 2px;
+    border-radius: 15%;
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    -ms-border-radius: 15%;
+    -o-border-radius: 15%;
+}
+
 
 .post-title{
     font-size: 25px;
@@ -294,15 +308,16 @@ nav{
     .blog-swiper{
         width: 700px;
     }
-    .post-closed{
+    .post-collapsed{
         height: 500px;
         width: 500px;
+        margin-left: 14%;
         border-radius: 60px;
         -webkit-border-radius: 60px;
         -moz-border-radius: 60px;
         -ms-border-radius: 60px;
         -o-border-radius: 60px;
-}
+    }
 
     .post-title{
         font-size: 25px;
@@ -314,22 +329,38 @@ nav{
 
 }
 
-
-
-
 @media (min-width: 450px) and ( max-width: 728px) {
+    .post-collapsed{
+        padding-left: 10%;
+    }
     .blog-swiper{
         width: 80%;
     }  
-    
-        
     .post-metadata{
         font-size: 10px;
     }   
-    .post-closed{
+    .post-collapsed{
         height: 300px;
         width: 300px;
     }
+}
+
+.post-expand-btn{
+    height: 7%;
+    width: 7%;
+    background-image: url('../web_assets/web_assets/Blog/expand.svg');
+    background-size: 90% 90% ;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.post-collapse-btn{
+    height: 7%;
+    width: 7%;
+    background-image: url('../web_assets/web_assets/Blog/collapse.svg');
+    background-size: 90% 90% ;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* About page */
@@ -388,6 +419,14 @@ nav{
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+
+/* Blog-Post */
+
+.blog-post{
+    box-shadow: rgb(219, 219, 219) 2px 2px 2px 2px;
+
 }
 
 
