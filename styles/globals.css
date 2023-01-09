@@ -178,12 +178,9 @@ nav{
     background-position: center;
     height: 70vh;
 }
-
-
-
-
-
-
+.contact-text{
+    font-size: 4rem;
+}
 
 /* Font for butterfly in header */
 @font-face {

@@ -16,7 +16,7 @@ const Contact: NextPage = () => {
       </Head>
       <div className='flex flex-col justify-between w-full h-max min-w-max min-h-max'>
         <div className='w-full py-24 contact-us-banner h-max'>
-          <div className='text-6xl text-center text-white bold-italic sm:text-8xl'>
+          <div className='contact-text text-center text-white bold-italic sm:text-8xl'>
             Contact Us
           </div>
         </div>
