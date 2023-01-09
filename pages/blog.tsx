@@ -148,8 +148,9 @@ export async function getStaticProps() {
   
   return {
     props: {
-      allPosts
+      allPosts: allPosts
     }, // will be passed to the page component as props
+    revalidate: 30
   }
 }
 
