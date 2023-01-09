@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <title>Home - Butterfly</title>
       </Head>
       {/* Left side */}
-      <div className='flex-col w-full h-max xl:min-h-screen bg-home xl:flex xl:w-1/2 home-left'>
+      <div className='flex-col w-full h-max overflow-hidden xl:min-h-screen  xl:max-h-screen bg-home xl:flex xl:w-1/2 home-left'>
         <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 overflow-hidden min-w-fit home-left-nav'>
           <div className='flex-wrap justify-between w-full ml-5 xl:inline-flex xl:flex-grow xl:w-auto'>
             <div className='flex flex-row flex-wrap justify-between w-full mr-12 '> 
@@ -46,9 +46,9 @@ const Home: NextPage = () => {
           </div>
         </nav>
         {/* main content */}
-        <div className='z-50 flex flex-col items-center justify-center w-full px-16'>
-          <div className='text-white sans-light-italic home-message xl:mt-20'><i>“ Spread your </i></div>
-          <div className='mb-20 text-white sans-light-italic home-message'> <i>social wings ”</i></div>
+        <div className='z-50 flex flex-col items-center justify-center w-full home-message'>
+          <div className='text-white sans-light-italic text-5xl sm:text-8xl'><i>“ Spread your </i></div>
+          <div className='mb-20 text-white sans-light-italic text-5xl sm:text-8xl'> <i>social wings ”</i></div>
         </div>
       </div>
 
@@ -62,10 +62,12 @@ const Home: NextPage = () => {
         <div className='relative w-full bg-inherit '>
           <div> 
               <a type='button' 
-              className='absolute justify-center h-16 pt-4 text-xl text-center text-white rounded-full w-44 home-download xl:bottom-5 xl:fixed xl:inline-flex xl:right-5 bg-home' 
+              className='absolute  text-white w-80 h-32 xl:h-16 rounded-full xl:w-44 home-download xl:bottom-5 xl:fixed  xl:right-5 ' 
               href="https://apps.apple.com/gb/app/butterfly/id1640868808"
               target="_blank" rel="noopener noreferrer">
-                <b>Download Now</b>
+                <div className='w-full h-full bg-home home-download-content rounded-full justify-center flex flex-col text-4xl xl:text-xl text-center'>
+                  <b>Download Now</b>
+                </div>
               </a>
           </div>
         </div>

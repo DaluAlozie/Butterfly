@@ -120,17 +120,18 @@ nav{
 
 /* Home page */
 .home-message{
-    font-size: 100px;    
-    white-space: nowrap;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    
 }
-
-@media (max-width: 768px) {
-
+@media (min-width: 1280px) {
     .home-message{
-        font-size: 50px;    
-        white-space: nowrap;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        
     }
 }
+
 
 .bg-home-right{
     background-image: url('../web_assets/web_assets/whitelogo.svg');
@@ -146,20 +147,17 @@ nav{
 }
 
 .home-download{
-    border: 6px solid white;
     right: calc(50% - 160px);
-    line-height: 1rem;
-
+}
+.home-download-content{
+    border: 10px solid white;
+    right: calc(50% - 160px);
 }
 
-@media (max-width: 1280px) {
-    .home-download{
-        font-size: 2.25rem;
-        line-height: 2.5rem;
-        height: 8rem;
-        width: 20rem/* 320px */;
-        padding-top: 2rem/* 40px */;
-        border: 10px solid white;
+
+@media (min-width: 1280px) {
+    .home-download-content{
+        border: 6px solid white;    
     }
 }
 
