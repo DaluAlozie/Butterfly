@@ -31,7 +31,10 @@ const EditPost: NextPage<PageProps> = ({ singlePost }: InferGetStaticPropsType<t
         author
       }
       const res = await updatePost(id, props);
-      if (res) toast.success("Post Updated")
+      if (res){
+        toast.success("Post Updated")
+        toast.loading("Refresh page after 10 seconds to see update")
+      } 
       else toast.error("Something went wrong")
     }
 
@@ -95,7 +98,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     if (!id){
         return{
           notFound: true,
-          revalidate: 30
+          revalidate: 10
       }
     }
     let post = await getPost(id as string)
@@ -103,7 +106,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     if (!post){
       return{
         notFound: true,
-        revalidate: 30
+        revalidate: 10
       }
     }
     
@@ -112,7 +115,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       props: {
         singlePost:  JSON.stringify(post)
       },
-      revalidate: 30
+      revalidate: 10
       // will be passed to the page component as props
       }
 }

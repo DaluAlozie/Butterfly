@@ -27,7 +27,7 @@ const SigningIn: NextPage = () => {
             // Clear email from storage.
             window.localStorage.removeItem('emailForSignIn');
             toast.success("Sign in Successful")
-            router.push("/")
+            window.location.assign("/")
             // You can access the new user via result.user
             // Additional user info profile not available via:
             // result.additionalUserInfo.profile == null
@@ -37,7 +37,7 @@ const SigningIn: NextPage = () => {
             .catch((error) => {
                 console.error(error)
                 toast.error("Sign in Unsuccessful")
-                router.push("/")
+                window.location.assign("/")
 
             // Some error occurred, you can inspect the code: error.code
             // Common errors could be invalid email and invalid or expired OTPs.
@@ -45,9 +45,9 @@ const SigningIn: NextPage = () => {
         }
         else{
             toast.error("Sign in Unsuccessful")
-            router.push("/")
+            window.location.assign("/")
         }
-    })
+    },[])
     return (
         <div className='w-full h-screen p-12 text-4xl'>
             <Head>

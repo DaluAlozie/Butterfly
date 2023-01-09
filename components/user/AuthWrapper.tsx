@@ -14,12 +14,6 @@ type PageProps = {
 const AuthWrapper: NextPage<PageProps> = ({ children } : PageProps) => {
     const router = useRouter()
     const user = useContext(UserContext)
-    useEffect( () => {
-        if (!user) {
-            toast.error("Access not allowed")
-            router.back()
-        }
-    },[user,router])
 
   return (
     <>   

@@ -120,14 +120,14 @@ nav{
 
 /* Home page */
 .home-message{
-    margin-top: 15%;
-    margin-bottom: 15%;
+    padding-top: 15%;
+    padding-bottom: 15%;
     
 }
 @media (min-width: 1280px) {
     .home-message{
-        margin-top: 20%;
-        margin-bottom: 20%;
+        padding-top: 20%;
+        padding-bottom: 20%;
         
     }
 }

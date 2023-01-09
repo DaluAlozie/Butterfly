@@ -78,7 +78,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   if (!id){
       return{
         notFound: true,
-        revalidate: 30
+        revalidate: 10
     }
   }
   let post = await getPost(id as string)
@@ -86,7 +86,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   if (!post){
     return{
       notFound: true,
-      revalidate: 30
+      revalidate: 10
     }
   }
   
@@ -95,7 +95,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     props: {
       singlePost:  JSON.stringify(post)
     },
-    revalidate: 30
+    revalidate: 10
     // will be passed to the page component as props
     }
   }

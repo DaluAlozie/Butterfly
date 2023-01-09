@@ -57,7 +57,10 @@ const CreatePost: NextPage = () => {
         timeStamp: Timestamp.now()
       }
       const res = await publishDraft(props);
-      if (res) toast.success("Draft Published")
+      if (res) {
+        toast.success("Draft Published")
+        toast.loading("Refresh page after 15 seconds to see post")
+      }
       else toast.error("Something went wrong")
     }
   }
