@@ -14,10 +14,10 @@ const Home: NextPage = () => {
         <title>Home - Butterfly</title>
       </Head>
       {/* Left side */}
-      <div className='flex-col w-full h-max overflow-hidden xl:min-h-screen  xl:max-h-screen bg-home xl:flex xl:w-1/2 home-left'>
-        <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 overflow-hidden min-w-fit home-left-nav h-max'>
+      <div className='flex-col w-full h-max xl:min-h-screen  xl:max-h-screen bg-home xl:flex xl:w-1/2 home-left'>
+        <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 lg:pt-5 pt-32 min-w-fit home-left-nav'>
           <div className='flex-wrap justify-between w-full ml-5 xl:inline-flex xl:flex-grow xl:w-auto h-max'>
-            <div className='flex flex-row flex-wrap justify-between w-full mr-12 h-max'> 
+            <div className='flex flex-row flex-wrap justify-center lg:justify-between w-full mr-12 h-max'> 
               <div className='h-max'>
                 <a className='inline-flex items-center p-2 mr-4'>
                   <Image src={logo}
@@ -47,13 +47,13 @@ const Home: NextPage = () => {
         </nav>
         {/* main content */}
         <div className='z-50 flex flex-col items-center justify-center w-full home-message'>
-          <div className='text-white sans-light-italic text-5xl sm:text-8xl'><i>“ Spread your </i></div>
+          <div className='text-white sans-light-italic text-5xl sm:text-8xl mb-7'><i>“ Spread your </i></div>
           <div className='mb-20 text-white sans-light-italic text-5xl sm:text-8xl'> <i>social wings ”</i></div>
         </div>
       </div>
 
       {/* Right side */}
-      <div className='relative flex-col w-full xl:min-h-screen h-max xl:flex xl:w-1/2'>
+      <div className='relative flex-col w-full xl:min-h-screen h-max xl:flex xl:w-1/2  xl:max-h-screen'>
         <div className='absolute top-0 left-0 z-0 w-full h-full bg-home-right'>
           
         </div>
@@ -62,10 +62,10 @@ const Home: NextPage = () => {
         <div className='relative w-full bg-inherit '>
           <div className='rounded-full h-max w-max'> 
               <a
-                className='absolute bg-none text-white w-80 h-32 xl:h-16 rounded-full xl:w-44 home-download xl:bottom-5 xl:fixed xl:right-5 ' 
+                className='absolute bg-none text-white w-80 h-32 xl:h-24 rounded-full xl:w-52 home-download xl:bottom-5 xl:fixed xl:right-5 ' 
                 href="https://apps.apple.com/gb/app/butterfly/id1640868808"
                 target="_blank" rel="noopener noreferrer">
-                <div className='w-full h-full bg-home home-download-content rounded-full justify-center flex flex-col text-4xl xl:text-xl text-center'>
+                <div className='w-full h-full bg-home home-download-content rounded-full justify-center flex flex-col text-4xl xl:text-2xl text-center'>
                   <b>Download Now</b>
                 </div>
               </a>

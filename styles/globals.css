@@ -155,9 +155,10 @@ nav{
 }
 
 
-@media (min-width: 1280px) {
-    .home-download-content{
-        border: 6px solid white;    
+@media (max-width: 350px) {
+    .home-download{
+        width: 100%;
+        right: 0;
     }
 }
 
