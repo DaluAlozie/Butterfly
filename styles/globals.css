@@ -73,12 +73,6 @@ nav{
 
 }
 
-/* Footer background */
-.bg-custom-footer{
-    background-image: linear-gradient(#6FBCFF 50%,#FFBBF4 90%);
-    background-attachment: fixed;
-}
-
 /* Custom collapse */
 #nav.collapse-hide{
     height: 120px;
@@ -169,13 +163,12 @@ nav{
     }
 }
 
-
-
-
-
 .bg-home{
     background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
-    
+    -webkit-background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
+    -moz-background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
+    -ms-background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
+    -o-background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);   
 }
 
 /* Contact background */
@@ -321,6 +314,10 @@ nav{
     font-size: 15px;
 }
 
+.post-expand-btn{
+    right: 0;
+    top: 50px;
+}
 
 @media (min-width: 728px) {
     .blog-swiper{
@@ -339,6 +336,7 @@ nav{
 
     .post-title{
         font-size: 80px;
+        margin-bottom: 30px;
     }
 
     .post-content{
@@ -347,6 +345,11 @@ nav{
 
     .post-metadata{
         font-size: 20px;
+    }
+
+    .post-expand-btn{
+        right: 15px;
+        top: 65px;
     }
 
 }
@@ -374,6 +377,11 @@ nav{
     .post-collapsed{
         height: 300px;
         width: 300px;
+        padding-top: 30px;
+    }
+    .post-expand-btn{
+        right: -20px;
+        top: 55px;
     }
 }
 
@@ -384,7 +392,6 @@ nav{
     background-size: 90% 90% ;
     background-position: center;
     background-repeat: no-repeat;
-
 }
 .post-collapse-btn{
     height: 7%;
@@ -398,7 +405,8 @@ nav{
 /* About page */
 
 .bg-about{
-    background: linear-gradient(140deg, rgb(240 249 255) 70%,#6FBCFF 10% 20%,#FFBBF4 );
+    background-color: linear-gradient(140deg, rgb(240 249 255) 70%,#6FBCFF 10% 20%,#FFBBF4 );
+    
 }
  .bg-about-2{
     background-color: #68b7fc;
@@ -446,8 +454,10 @@ nav{
 }
 
 .about-image-title{
-    background: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
+    background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
+
     background-clip: text;
+    -webkit-background-image:    radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
