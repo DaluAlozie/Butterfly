@@ -33,7 +33,7 @@ const EditPost: NextPage<PageProps> = ({ singlePost }: InferGetStaticPropsType<t
       const res = await updatePost(id, props);
       if (res){
         toast.success("Post Updated")
-        toast.loading("Refresh page after 10 seconds to see update")
+        toast.loading("Refresh page after 10 seconds to see update", { duration: 5 })
       } 
       else toast.error("Something went wrong")
     }
