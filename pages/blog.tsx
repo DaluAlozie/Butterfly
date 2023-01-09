@@ -70,7 +70,7 @@ const Blog: NextPage<PageProps> = ({ allPosts }: InferGetStaticPropsType<typeof 
       </Swiper>
     </div>
 
-    <div className='flex flex-col items-center w-full mb-36'>
+    <div className='flex flex-col items-center w-full mb-36 mt-16'>
       <div className='w-full my-2 text-4xl text-center sm:text-7xl bold-italic'>Meet the Team</div>
       <div className='team-swiper'>
         <div  className='hidden w-full team-swiper justify-evenly 2xl:flex h-max'>   
