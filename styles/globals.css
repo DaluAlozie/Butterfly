@@ -302,7 +302,7 @@ nav{
 
 .post-title{
     font-size: 50px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .post-content{
@@ -335,7 +335,7 @@ nav{
 
     .post-title{
         font-size: 80px;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 
     .post-content{
@@ -356,7 +356,7 @@ nav{
 @media (min-width: 450px) and ( max-width: 728px) {
     .post-title{
         font-size: 50px;
-        margin-bottom: 0;
+        margin-bottom: 10px;
         padding: none;
 
     }
