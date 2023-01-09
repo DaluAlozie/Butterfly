@@ -61,10 +61,10 @@ const Home: NextPage = () => {
         {/* main content */}
         <div className='relative w-full bg-inherit '>
           <div className='rounded-full h-max w-max'> 
-              <a type='button' 
-              className='absolute bg-none text-white w-80 h-32 xl:h-16 rounded-full xl:w-44 home-download xl:bottom-5 xl:fixed xl:right-5 ' 
-              href="https://apps.apple.com/gb/app/butterfly/id1640868808"
-              target="_blank" rel="noopener noreferrer">
+              <a
+                className='absolute bg-none text-white w-80 h-32 xl:h-16 rounded-full xl:w-44 home-download xl:bottom-5 xl:fixed xl:right-5 ' 
+                href="https://apps.apple.com/gb/app/butterfly/id1640868808"
+                target="_blank" rel="noopener noreferrer">
                 <div className='w-full h-full bg-home home-download-content rounded-full justify-center flex flex-col text-4xl xl:text-xl text-center'>
                   <b>Download Now</b>
                 </div>
