@@ -48,7 +48,7 @@ const Blog: NextPage<PageProps> = ({ allPosts }: InferGetStaticPropsType<typeof 
         )
       }
     </div>
-    <div className='mb-28 blog-swiper min-h-max'>
+    <div className='mb-8 blog-swiper min-h-max'>
 
       <Swiper
             // install Swiper modules
@@ -71,7 +71,7 @@ const Blog: NextPage<PageProps> = ({ allPosts }: InferGetStaticPropsType<typeof 
     </div>
 
     <div className='flex flex-col items-center w-full mb-36'>
-      <div className='w-full my-10 text-4xl text-center sm:text-7xl bold-italic'>Meet the Team</div>
+      <div className='w-full my-2 text-4xl text-center sm:text-7xl bold-italic'>Meet the Team</div>
       <div className='team-swiper'>
         <div  className='hidden w-full team-swiper justify-evenly 2xl:flex h-max'>   
           <Swiper

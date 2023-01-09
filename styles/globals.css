@@ -3,11 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.body {
+:root {
+    --minWidth: 280px;
+  }
+  
+  
+  .body {
     margin:0px;
 
-    min-width: 280px;
+    min-width: var(--minWidth);
 }
+
 
 /* Nav link styles */
 nav{
@@ -274,14 +280,17 @@ nav{
 }
 
 .blog-swiper{
-    width: 280px;
+    width: 100vw;
 }
 
 .post-collapsed{
-    height: 200px;
-    width: 200px;
+    height: 80vw;
+    width: 80vw;
     margin-left: 5%;
     padding: 25px;
+    min-width: var(--minWidth);
+    min-height: var(--minWidth);
+
 }
 
 .post-background{
@@ -300,16 +309,16 @@ nav{
 
 
 .post-title{
-    font-size: 25px;
-    margin-bottom: 0;
+    font-size: 50px;
+    margin-bottom: 5px;
 }
 
 .post-content{
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .post-metadata{
-    font-size: 8px;
+    font-size: 15px;
 }
 
 
@@ -329,7 +338,11 @@ nav{
     }
 
     .post-title{
-        font-size: 25px;
+        font-size: 80px;
+    }
+
+    .post-content{
+        font-size: 40px;
     }
 
     .post-metadata{
@@ -339,6 +352,16 @@ nav{
 }
 
 @media (min-width: 450px) and ( max-width: 728px) {
+    .post-title{
+        font-size: 50px;
+        margin-bottom: 0;
+        padding: none;
+
+    }
+    .post-content{
+        font-size: 20px;
+        margin-top: 0;
+    }
     .post-collapsed{
         padding-left: 10%;
     }

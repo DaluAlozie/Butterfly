@@ -16,12 +16,12 @@ const Post: NextPage<Props> = ({props}) => {
 
     return (
         <div ref={postRef} className='relative flex flex-col p-12 pt-16 mb-10 text-black sm:ml-24 rounded-3xl post-collapsed'>
-            <div className='absolute z-0 w-full h-full post-background'></div>
+            <div className='absolute z-0 w-full h-full post-background '></div>
             <Link passHref={true} href={`/blog/${id}`} className='absolute right-0 z-50 rounded-full post-expand-btn top-10 sm:top-16 sm:right-3'></Link>
-            <div className='z-10 w-full mt-8 mb-10 ml-10 text-4xl sm:mt-20 sm:text-7xl post-title sans-bold'>
+            <div className='z-10 w-full mt-8 mb-10 ml-10 sm:mt-20 text-7xl post-title sans-bold'>
                 {title}
             </div>
-            <div className='z-10 w-full ml-10 overflow-hidden text-xl text-black sm:mt-10 sm:text-3xl h-5/6 post-content sans-regular whitespace-pre'>
+            <div className='z-10 w-full ml-10 overflow-hidden text-black text-3xl h-5/6 post-content sans-regular whitespace-pre'>
                 {content}
             </div>        
             <div className='z-10 flex flex-row self-center justify-between w-10/12 mt-5 ml-10 text-center text-black text:sm post-metadata sans-light-italic'>
