@@ -7,7 +7,7 @@ type sectionType = {
 
   const sectionClass: string = "h-max p-8 about-section  m-2"
   const imageClass: string = "about-image"
-  const sectionTitleClass: string = "mb-5 text-center sans-italic about-image-title"
+  const sectionTitleClass: string = "mb-5 text-center sans-regular about-image-title"
   const imageHeight: number = 700
   const swiperClass: string = "section-swiper"
 

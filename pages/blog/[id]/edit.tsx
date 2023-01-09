@@ -4,6 +4,8 @@ import { useState, ChangeEvent } from 'react'
 import { Timestamp } from 'firebase/firestore'
 import { toast } from 'react-hot-toast'
 import AuthWrapper from '../../../components/user/AuthWrapper'
+import Head from 'next/head'
+
 type PageProps = {
     singlePost: string
 }
@@ -36,19 +38,25 @@ const EditPost: NextPage<PageProps> = ({ singlePost }: InferGetStaticPropsType<t
     return (
       <AuthWrapper>
         <div className='w-full h-max min-h-screen flex flex-col justify-start items-center my-32'>
+          <Head>
+              <title>Edit Post - Butterfly</title>
+          </Head>
           <div className='w-11/12 rounded-3xl blog-post p-10'>
               <div>
-                  <input className='text-4xl xl:text-7xl sans-bold w-full accent-neutral-400	focus:outline-none' 
+                <input placeholder='Title'
+                  className='text-4xl xl:text-7xl sans-bold w-full accent-neutral-400	focus:outline-none' 
                   type="text" defaultValue={post.title}  onChange={(e)=>{setTitle(e.target.value)}}/>
               </div>
               <div>
-                  <textarea className='w-full my-5 text-2xl h-max sans-regular xl:text-3xl resize-none focus:outline-none'
+                  <textarea placeholder='Content'
+                  className='w-full my-5 text-2xl h-max sans-regular xl:text-3xl resize-none focus:outline-none whitespace-pre'
                   defaultValue={post.content} cols={1} rows={1} 
                   onChange={(e)=>{setContent(e.target.value); textAreaAdjust(e)}}
                   ></textarea>
               </div>
               <div>
-              <input className='sans-light-italic focus:outline-none'
+              <input placeholder='Author'
+              className='sans-light-italic focus:outline-none'
                 type="text" defaultValue={post.author}  onChange={(e)=>{setAuthor(e.target.value)}}/>
               </div>
               <div>

@@ -21,7 +21,7 @@ const Post: NextPage<Props> = ({props}) => {
             <div className='z-10 w-full mt-8 mb-10 ml-10 text-4xl sm:mt-20 sm:text-7xl post-title sans-bold'>
                 {title}
             </div>
-            <div className='z-10 w-full ml-10 overflow-hidden text-xl text-black sm:mt-10 sm:text-3xl h-5/6 post-content sans-regular'>
+            <div className='z-10 w-full ml-10 overflow-hidden text-xl text-black sm:mt-10 sm:text-3xl h-5/6 post-content sans-regular whitespace-pre'>
                 {content}
             </div>        
             <div className='z-10 flex flex-row self-center justify-between w-10/12 mt-5 ml-10 text-center text-black text:sm post-metadata sans-light-italic'>

@@ -1,8 +1,6 @@
-import { doc,collection, getDocs, query, orderBy, where, getDoc, 
-        updateDoc, Timestamp, addDoc, setDoc } from "firebase/firestore"; 
+import { doc,collection, getDocs, query, orderBy, getDoc, 
+        updateDoc, Timestamp, addDoc, setDoc, deleteDoc } from "firebase/firestore"; 
 import { db } from "../../firebase/config";
-import { getAuth } from "firebase/auth";
-import firebase from 'firebase/auth'
 
 type PostProps = {
     id: string,
@@ -30,6 +28,8 @@ type DraftProps = {
     content: string,
     author: string,
 };
+
+
 
 const getPosts = async () => {
     try {
@@ -59,9 +59,9 @@ const getPost = async ( id: string ) => {
     }
 }
 
-const getDraft = async (id: string) => {
+const getDraft = async (id: string | undefined) => {
 
-    
+    if (!id) return undefined;
     
     try{              
         const snap = await getDoc(doc(db, `Users/${id}/Drafts/draft`))
@@ -109,6 +109,16 @@ const saveDraft = async (id: string, props: DraftProps ) => {
     }
 }
 
+const deletePost = async (id: string ) => {
+    try {        
+        await deleteDoc(doc(db, `Posts/${id}`))      
+        return true
+
+    } catch (error) {
+        return false
+    }
+}
+
 
 export type { PostProps, UpdateProps, PublishProps, DraftProps }
-export { getPost ,getPosts, updatePost, publishDraft, saveDraft, getDraft }
+export { getPost ,getPosts, updatePost, publishDraft, saveDraft, getDraft, deletePost }

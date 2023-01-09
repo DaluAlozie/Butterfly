@@ -69,7 +69,7 @@ const Contact: NextPage = () => {
           </div>
 
         </div>
-        <div className={cellClass}>
+        <div className={cellClass+" mt-16"}>
             <Image src={campus}
                       height={120}
                       width={120}

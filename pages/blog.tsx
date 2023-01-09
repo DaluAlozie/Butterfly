@@ -7,7 +7,9 @@ import Image from 'next/image';
 import { allMembers, memberType } from '../components/blog/allMembers';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { useContext } from 'react'
+import { UserContext } from '../components/user/UserContext'
+import Link from 'next/link'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -26,33 +28,46 @@ type PageProps = {
 const Blog: NextPage<PageProps> = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   const posts: PostProps[] = (JSON.parse(allPosts)) as PostProps[]
-  
+  const user = useContext(UserContext)
+
   //Gets posts when page loads 
   return (
   <div className='flex flex-col items-center justify-start w-full min-h-screen h-max'>
       <Head>
         <title>Blog - Butterfly</title>
     </Head>
-    <div className='flex flex-row my-28 blog-swiper min-h-max'>
-    <Swiper
-          // install Swiper modules
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={1}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-        > 
-        {
-          posts.map((post: PostProps) => 
-          <SwiperSlide key={post.id}>
-            <Post key={post.id} 
-              props={post}/>
-          </SwiperSlide>
-        )}
-        <div className='h-10'></div> 
-    </Swiper>
-  
+    <div className='mt-10 flex flex-row justify-center sm:justify-end w-full'>
+      {
+        user && (
+          <div >
+            <Link href={`/blog/create`}
+              className='w-36 h-16 rounded-2xl text-center flex flex-col justify-center sans-regular text-2xl shadow-md border-4 mr-0 sm:mr-10'>
+                <b>Create Post</b>
+            </Link>
+          </div>
+        )
+      }
+    </div>
+    <div className='mb-28 blog-swiper min-h-max'>
+
+      <Swiper
+            // install Swiper modules
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={1}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+          > 
+          {
+            posts.map((post: PostProps) => 
+            <SwiperSlide key={post.id}>
+              <Post key={post.id} 
+                props={post}/>
+            </SwiperSlide>
+          )}
+          <div className='h-10'></div> 
+      </Swiper>
     </div>
 
     <div className='flex flex-col items-center w-full mb-36'>

@@ -6,10 +6,6 @@ import { toast } from 'react-hot-toast'
 import AuthWrapper from '../../components/user/AuthWrapper'
 import { UserContext } from '../../components/user/UserContext'
 
-type PageProps = {
-  draftParam: string
-}
-
 const buttonClass = "w-28 h-16 sm:w-40 sm:h-20 rounded-3xl text-center items-center flex flex-col justify-center sans-regular text-md sm:text-2xl shadow-md border-4"
 
 const CreatePost: NextPage = () => {
@@ -20,12 +16,13 @@ const CreatePost: NextPage = () => {
   const user = useContext(UserContext)
 
   useEffect(()=> {    
-    getDraft(user?.id|| "error").then((res) => {
+    getDraft(user?.id).then((res) => {
       if (res){
         const draft = res     
         setTitle(draft.title)
         setContent(draft.content)
         setAuthor(draft.author)   
+        toast.success("Draft Loaded")
       }  
     })    
   },[user])
@@ -36,63 +33,75 @@ const CreatePost: NextPage = () => {
   }
 
   const handleSaveDraft = async () => {
+    if (!user) return 
+
     const props: DraftProps = {
       title,
       content,
       author,
     }
-    const res = await saveDraft(user?.id||"", props);
+    const res = await saveDraft(user?.id ||"none", props);
     
     if (res) toast.success("Draft Saved")
     else toast.error("Something went wrong")
   }
 
   const handlePublishDraft = async () => {
-    const props: PublishProps = {
-      title,
-      content,
-      author,
-      timeStamp: Timestamp.now()
+    if (!user) return 
+    const sure: boolean = window.confirm("Are you sure you want to PUBLISH this draft ? ")
+    if (sure){
+      const props: PublishProps = {
+        title: title.trim(),
+        content: content.trim(),
+        author: author.trim(),
+        timeStamp: Timestamp.now()
+      }
+      const res = await publishDraft(props);
+      if (res) toast.success("Draft Published")
+      else toast.error("Something went wrong")
     }
-    const res = await publishDraft(props);
-    if (res) toast.success("Draft Published")
-    else toast.error("Something went wrong")
   }
 
   return (
-    <div className='w-full h-max min-h-screen flex flex-col justify-start items-center my-32'>
-      <div className='w-11/12 rounded-3xl blog-post p-10'>
-        <div>
-          <input className='text-4xl xl:text-7xl sans-bold w-full accent-neutral-400	focus:outline-none' 
-          type="text" defaultValue={title}  
-          onChange={(e)=>{setTitle(e.target.value)}}/>
+    <AuthWrapper>
+      <div className='w-full h-max min-h-screen flex flex-col justify-start items-center my-32'>
+        <div className='w-11/12 rounded-3xl blog-post p-10'>
+          <div>
+            <input placeholder='Title' 
+            className='text-4xl xl:text-7xl sans-bold w-full accent-neutral-400	focus:outline-none' 
+            type="text" defaultValue={title}  
+            onChange={(e)=>{setTitle(e.target.value)}}/>
+          </div>
+          <div>
+            <textarea placeholder='Content' 
+            className='w-full my-5 text-2xl h-max sans-regular xl:text-3xl resize-none focus:outline-none'
+            defaultValue={content} cols={1} rows={1} 
+            onChange={(e)=>{setContent(e.target.value); textAreaAdjust(e)}}
+            ></textarea>
+          </div>
+          <div>
+          <input placeholder='Author'
+          className='sans-light-italic focus:outline-none'
+            type="text" defaultValue={author}  onChange={(e)=>{setAuthor(e.target.value)}}/>
+          </div>
         </div>
-        <div>
-          <textarea className='w-full my-5 text-2xl h-max sans-regular xl:text-3xl resize-none focus:outline-none'
-          defaultValue={content} cols={1} rows={1} 
-          onChange={(e)=>{setContent(e.target.value); textAreaAdjust(e)}}
-          ></textarea>
-        </div>
-        <div>
-        <input className='sans-light-italic focus:outline-none'
-          type="text" defaultValue={author}  onChange={(e)=>{setAuthor(e.target.value)}}/>
+        <div className='w-11/12 flex flex-row justify-between mt-10'>
+          <button
+            onClick={handlePublishDraft}
+            className={buttonClass}
+          >
+            <b>Publish Draft</b>
+          </button>
+          <button
+            onClick={handleSaveDraft}
+            className={buttonClass}
+          >
+            <b>Save Draft</b>
+          </button>
         </div>
       </div>
-      <div className='w-11/12 flex flex-row justify-between mt-10'>
-        <button
-          onClick={handlePublishDraft}
-          className={buttonClass}
-        >
-          <b>Publish Draft</b>
-        </button>
-        <button
-          onClick={handleSaveDraft}
-          className={buttonClass}
-        >
-          <b>Save Draft</b>
-        </button>
-      </div>
-    </div>
+    </AuthWrapper>
+
 
   )
 }
