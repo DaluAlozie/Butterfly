@@ -15,10 +15,10 @@ const Home: NextPage = () => {
       </Head>
       {/* Left side */}
       <div className='flex-col w-full h-max overflow-hidden xl:min-h-screen  xl:max-h-screen bg-home xl:flex xl:w-1/2 home-left'>
-        <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 overflow-hidden min-w-fit home-left-nav'>
-          <div className='flex-wrap justify-between w-full ml-5 xl:inline-flex xl:flex-grow xl:w-auto'>
-            <div className='flex flex-row flex-wrap justify-between w-full mr-12 '> 
-              <div>
+        <nav className='z-50 flex flex-wrap items-start justify-between w-full px-2 py-4 pt-5 overflow-hidden min-w-fit home-left-nav h-max'>
+          <div className='flex-wrap justify-between w-full ml-5 xl:inline-flex xl:flex-grow xl:w-auto h-max'>
+            <div className='flex flex-row flex-wrap justify-between w-full mr-12 h-max'> 
+              <div className='h-max'>
                 <a className='inline-flex items-center p-2 mr-4'>
                   <Image src={logo}
                       height={50}
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
                   <span className='mb-6 text-6xl text-white'>.</span>
                 </a>
               </div>
-              <div className='hidden xl:flex '>
+              <div className='hidden xl:flex h-max'>
                 <a href="https://www.linkedin.com/company/butterflytechnologies/" className="mt-5" target="_blank" rel="noopener noreferrer">
                   <Image src={linkedinIcon}
                     height={50}
