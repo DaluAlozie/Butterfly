@@ -15,8 +15,8 @@ const Contact: NextPage = () => {
         <title>Contact - Butterfly</title>
       </Head>
       <div className='flex flex-col justify-between w-full h-max min-w-max min-h-max'>
-        <div className='w-full contact-us-banner h-max flex flex-col justify-center items-center'>
-          <div className='contact-text text-center text-white bold-italic text-6xl sm:text-8xl'>
+        <div className='flex flex-col items-center justify-center w-full contact-us-banner h-max'>
+          <div className='text-center text-white contact-text bold-italic'>
             Contact Us
           </div>
         </div>
