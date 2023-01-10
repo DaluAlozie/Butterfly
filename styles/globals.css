@@ -102,7 +102,7 @@ nav{
         -moz-transition: height 0.25s ease-in-out;
         -ms-transition: height 0.25s ease-in-out;
         -o-transition: height 0.25s ease-in-out;
-}
+    }
 }
 
 /* hide nav on scroll */
@@ -142,10 +142,6 @@ nav{
     opacity: 30%;
 }
 
-.title{
-    font-size: 60px;    
-}
-
 .home-download{
     right: calc(50% - 160px);
 }
@@ -182,7 +178,6 @@ nav{
     font-size: 4rem;
 }
 
-/* Font for butterfly in header */
 @font-face {
     font-family: 'logo-font';
     src: url('../web_assets/web_assets/Ubuntu/Ubuntu-Bold.ttf');
@@ -237,7 +232,6 @@ nav{
 .sans-light{
     font-family: "sans-light";
 }
-
 
 
 /* Blog page */
@@ -295,7 +289,6 @@ nav{
     -ms-border-radius: 15%;
     -o-border-radius: 15%;
 }
-
 
 .post-title{
     font-size: 50px;
@@ -451,10 +444,8 @@ nav{
 
 .about-image-title{
     background-image: radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
-
     background-clip: text;
     -webkit-background-image:    radial-gradient(ellipse at 15% 90%,#FFBBF4 10% 20%,#6FBCFF);
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -464,14 +455,10 @@ nav{
 
 .blog-post{
     box-shadow: rgb(219, 219, 219) 2px 2px 2px 2px;
-
 }
-
-
 
 @media (min-width: 768px) {
     .about-download {
         font-size: 120px;
     }
 }
-
