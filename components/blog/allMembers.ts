@@ -13,31 +13,31 @@ type memberType = {
 }
 
 const allMembers : memberType[] = [
-    {
-      image: ceo,
-      name: "Josh Okusi",
-      role: "CEO"
-    },
-    {
-        image: cfo,
-        name: "Alex Reid",
-        role: "CFO"
-      },
-      {
-        image: cto,
-        name: "Zain Mobarik",
-        role: "CTO"
-      },
-      {
-        image: techLead1,
-        name: "Jessica Daniels",
-        role: "Tech Lead"
-      },
-      {
-        image: techLead2,
-        name: "Neil Shaabi",
-        role: "Tech Lead"
-      },
+  {
+    image: ceo,
+    name: "Josh Okusi",
+    role: "CEO"
+  },
+  {
+      image: cfo,
+      name: "Alex Reid",
+      role: "CFO"
+  },
+  {
+    image: cto,
+    name: "Zain Mobarik",
+    role: "CTO"
+  },
+  // {
+  //   image: techLead1,
+  //   name: "Jessica Daniels",
+  //   role: "Tech Lead"
+  // },
+  // {
+  //   image: techLead2,
+  //   name: "Neil Shaabi",
+  //   role: "Tech Lead"
+  // },
 
 ]
 
