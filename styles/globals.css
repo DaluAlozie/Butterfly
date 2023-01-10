@@ -172,10 +172,23 @@ nav{
     background-image: url('../web_assets/web_assets/Contact/contact-us.jpg');
     background-size: cover;
     background-position: center;
-    height: 70vh;
+    height: 50vh;
 }
+
 .contact-text{
-    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20vw;
+}
+
+@media (min-width: 640px) {
+    .contact-text{
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    .contact-us-banner{
+        height: 70vh;
+    }
 }
 
 @font-face {
@@ -198,7 +211,6 @@ nav{
     font-family: "bold-italic";
 }
 
-
 @font-face {
     font-family: 'sans-regular';
     src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-Regular.ttf');
@@ -207,7 +219,6 @@ nav{
     font-family: "sans-regular";
 }
 
-
 @font-face {
     font-family: 'sans-bold';
     src: url('../web_assets/web_assets/Source_Sans_Pro/SourceSansPro-Bold.ttf');
@@ -215,7 +226,6 @@ nav{
 .sans-bold{
     font-family: "sans-bold";
 }
-
 
 @font-face {
     font-family: 'sans-italic';

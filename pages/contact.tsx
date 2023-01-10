@@ -15,12 +15,11 @@ const Contact: NextPage = () => {
         <title>Contact - Butterfly</title>
       </Head>
       <div className='flex flex-col justify-between w-full h-max min-w-max min-h-max'>
-        <div className='w-full py-24 contact-us-banner h-max'>
-          <div className='contact-text text-center text-white bold-italic sm:text-8xl'>
+        <div className='w-full contact-us-banner h-max flex flex-col justify-center items-center'>
+          <div className='contact-text text-center text-white bold-italic text-6xl sm:text-8xl'>
             Contact Us
           </div>
         </div>
-
       </div>
       <div className='flex flex-col items-center w-full sm:flex-row h-max min-h-max justify-evenly'>
         <div className={cellClass}>
