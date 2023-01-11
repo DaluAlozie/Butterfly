@@ -22,14 +22,13 @@ const Footer: NextPage = () => {
             target="_blank" rel="noopener noreferrer">
               Download
           </a>
-          <div>Butterfly Technologies ©</div>
+          <div>Butterfly Tehnologies ©</div>
       </div>
 
       {/* Right */}
       <div className={columnClass}>
-        <Link href='/sign-in'>
-          Sign In
-        </Link>
+        <div>
+        </div>
         <div>
           <Link href='/contact'>
               <span className="">
